@@ -8,7 +8,7 @@ from datetime import datetime
 def display_candlestick_chart(file_path):
     df = pd.read_csv(file_path)
     fig = go.Figure(data=[go.Candlestick(x=df['formatted_date'],
-                open=df['Min Price (Rs./Quintal)'],
+                open=df['Modal Price (Rs./Quintal)'],
                 high=df['Max Price (Rs./Quintal)'],
                 low=df['Min Price (Rs./Quintal)'],
                 close=df['Modal Price (Rs./Quintal)'])])

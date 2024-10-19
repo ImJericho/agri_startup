@@ -12,11 +12,21 @@ import requests
 
 
 # Original URL string with placeholder dates
+
+common_url = "https://agmarknet.gov.in/MarketWiseGraph/MarkGraphBoard.aspx"
+
 url_template = ("https://agmarknet.gov.in/SearchCmmMkt.aspx?"
                 "Tx_Commodity=1&Tx_State=MP&Tx_District=12&Tx_Market=2440&"
                 "DateFrom={date_from}&DateTo={date_to}&"
                 "Fr_Date={date_from}&To_Date={date_to}&"
-                "Tx_Trend=0&Tx_CommodityHead=Wheat&"
+                "Tx_Trend=0&Tx_CommodityHead={commodity}&"
+                "Tx_StateHead={state}&Tx_DistrictHead={districft}&Tx_MarketHead={market}")
+
+url_template = ("https://agmarknet.gov.in/SearchCmmMkt.aspx?"
+                "Tx_Commodity=1&Tx_State=MP&Tx_District=12&Tx_Market=2440&"
+                "DateFrom={date_from}&DateTo={date_to}&"
+                "Fr_Date={date_from}&To_Date={date_to}&"
+                "Tx_Trend=0&Tx_CommodityHead={commodity}&"
                 "Tx_StateHead=Madhya+Pradesh&Tx_DistrictHead=Shajapur&Tx_MarketHead=Shajapur")
 
 
@@ -131,14 +141,15 @@ def old_method_using_selenuim():
     # text = message.text
 
     driver.quit()
-# Function to change dates in the URL
-def update_url_with_dates(date_from, date_to):
+
+def update_url_with_dates(date_from, date_to, commodity):
     # Convert input dates to the required format 'dd-MMM-yyyy'
     date_from_str = date_from.strftime('%d-%b-%Y')
     date_to_str = date_to.strftime('%d-%b-%Y')
     # Substitute the dates in the URL template
-    updated_url = url_template.format(date_from=date_from_str, date_to=date_to_str)
+    updated_url = url_template.format(date_from=date_from_str, date_to=date_to_str, commodity=commodity)
     return updated_url
+
 
 def update_url():
     # Example usage - dynamically setting the dates
@@ -146,7 +157,7 @@ def update_url():
     new_to_date = datetime(2024, 10, 20)   # Change to your desired end date
 
     # Get the updated URL
-    updated_url = update_url_with_dates(new_from_date, new_to_date)
+    updated_url = update_url_with_dates(new_from_date, new_to_date, "wheat")
 
     return updated_url
 
