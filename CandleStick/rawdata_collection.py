@@ -18,6 +18,12 @@ class AgriDataCollector:
                              "Tx_Trend=0&Tx_CommodityHead={commodity}&"
                              "Tx_StateHead=Madhya+Pradesh&Tx_DistrictHead=Shajapur&Tx_MarketHead=Shajapur")
 
+    def _select_dropdown(self, driver, element_id, visible_text):
+        element = driver.find_element(by=By.ID, value=element_id)
+        select = Select(element)
+        select.select_by_visible_text(visible_text)
+        time.sleep(2)
+
     def old_method_using_selenium(self):
         driver = webdriver.Chrome()
         driver.get("https://agmarknet.gov.in/PriceAndArrivals/CommodityDailyStateWise.aspx")
@@ -42,26 +48,18 @@ class AgriDataCollector:
 
         driver.quit()
 
-    def _select_dropdown(self, driver, element_id, visible_text):
-        element = driver.find_element(by=By.ID, value=element_id)
-        select = Select(element)
-        select.select_by_visible_text(visible_text)
-        time.sleep(2)
-
-    def update_url_with_dates(self, date_from, date_to, commodity):
+    # New method using requests
+    def update_url(self, date_from, date_to, commodity):
+        print("Updating URL")
         date_from_str = date_from.strftime('%d-%b-%Y')
         date_to_str = date_to.strftime('%d-%b-%Y')
         updated_url = self.url_template.format(date_from=date_from_str, date_to=date_to_str, commodity=commodity)
         return updated_url
 
-    def update_url(self):
-        new_from_date = datetime(2023, 1, 1)
-        new_to_date = datetime(2024, 10, 20)
-        updated_url = self.update_url_with_dates(new_from_date, new_to_date, "wheat")
-        return updated_url
-
-    def using_request(self):
-        url = self.update_url()
+    # Using requests 
+    def collect_rawdata(self, date_from = datetime(2024, 1, 1), date_to = datetime(2024, 10, 20), commodity = "wheat"):
+        print("Collecting raw data")
+        url = self.update_url(date_from, date_to, commodity)
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         table = soup.find('table', {'id': 'cphBody_GridPriceData'})
@@ -69,14 +67,22 @@ class AgriDataCollector:
         headers = [th.text.strip() for th in table.find_all('th')]
         data = [[td.text.strip() for td in tr.find_all('td')] for tr in table.find_all('tr')[1:]]
 
+        print(data)
         df = pd.DataFrame(data, columns=headers)
         df['formatted_date'] = pd.to_datetime(df['Price Date'], format='%d %b %Y')
         df['formatted_date'] = df['formatted_date'].dt.strftime('%d-%m-%Y')
 
-        csv_file_path = 'dataset/raw_data.csv'
+        csv_file_path = f'dataset/rawdata/{commodity}.csv'
         df.to_csv(csv_file_path, index=False)
 
 if __name__ == "__main__":
+    print("running the main function")
     collector = AgriDataCollector()
     # collector.old_method_using_selenium()
-    # collector.using_request()
+
+    new_from_date = datetime(2023, 1, 1)
+    new_to_date = datetime(2024, 10, 20)
+    commodity = "wheat"
+
+    collector.collect_rawdata()
+    # collector.collect_rawdata(new_from_date, new_to_date, commodity)
