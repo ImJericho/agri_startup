@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
+import main
 
 
 
@@ -18,4 +19,6 @@ def display_candlestick_chart(file_path):
 
 
 if __name__ == "__main__":
-    display_candlestick_chart("dataset/raw_data.csv")
+    commodities = main.find_all_commodities_of_intrest()
+    for commodity in commodities:
+        display_candlestick_chart(f"dataset/rawdata/{commodity}.csv")
