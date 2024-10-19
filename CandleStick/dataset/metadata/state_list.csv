@@ -1,38 +1,38 @@
-Index,Value
+value,text
 0,--Select--
-1,Andaman and Nicobar
-2,Andhra Pradesh
-3,Arunachal Pradesh
-4,Assam
-5,Bihar
-6,Chandigarh
-7,Chattisgarh
-8,Dadra and Nagar Haveli
-9,Daman and Diu
-10,Goa
-11,Gujarat
-12,Haryana
-13,Himachal Pradesh
-14,Jammu and Kashmir
-15,Jharkhand
-16,Karnataka
-17,Kerala
-18,Lakshadweep
-19,Madhya Pradesh
-20,Maharashtra
-21,Manipur
-22,Meghalaya
-23,Mizoram
-24,Nagaland
-25,NCT of Delhi
-26,Odisha
-27,Pondicherry
-28,Punjab
-29,Rajasthan
-30,Sikkim
-31,Tamil Nadu
-32,Telangana
-33,Tripura
-34,Uttar Pradesh
-35,Uttrakhand
-36,West Bengal
+AN,Andaman and Nicobar
+AP,Andhra Pradesh
+AR,Arunachal Pradesh
+AS,Assam
+BI,Bihar
+CH,Chandigarh
+CG,Chattisgarh
+DN,Dadra and Nagar Haveli
+DD,Daman and Diu
+GO,Goa
+GJ,Gujarat
+HR,Haryana
+HP,Himachal Pradesh
+JK,Jammu and Kashmir
+JR,Jharkhand
+KK,Karnataka
+KL,Kerala
+LD,Lakshadweep
+MP,Madhya Pradesh
+MH,Maharashtra
+MN,Manipur
+MG,Meghalaya
+MZ,Mizoram
+NG,Nagaland
+DL,NCT of Delhi
+OR,Odisha
+PC,Pondicherry
+PB,Punjab
+RJ,Rajasthan
+SK,Sikkim
+TN,Tamil Nadu
+TL,Telangana
+TR,Tripura
+UP,Uttar Pradesh
+UC,Uttrakhand
+WB,West Bengal

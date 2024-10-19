@@ -1,470 +1,455 @@
-Index,Value
+value,text
 0,--Select--
-1,Absinthe
-2,Ajwan
-3,Alasande Gram
-4,Almond(Badam)
-5,Alsandikai
-6,Amaranthus
-7,Ambada Seed
-8,Ambady/Mesta
-9,Amla(Nelli Kai)
-10,Amphophalus
-11,Amranthas Red
-12,Antawala
-13,Anthorium
-14,Apple
-15,Apricot(Jardalu/Khumani)
-16,Arecanut(Betelnut/Supari)
-17,Arhar (Tur/Red Gram)(Whole)
-18,Arhar Dal(Tur Dal)
-19,Asalia
-20,Asgand
-21,Ashgourd
-22,Ashoka
-23,Ashwagandha
-24,Asparagus
-25,Astera
-26,Atis
-27,Avare Dal
-28,Bael
-29,Bajji chilli
-30,Bajra(Pearl Millet/Cumbu)
-31,Balekai
-32,balsam
-33,Bamboo
-34,Banana
-35,Banana - Green
-36,Banana flower
-37,Banana Leaf
-38,Banana stem
-39,Barley (Jau)
-40,basil
-41,Bay leaf (Tejpatta)
-42,Beans
-43,Beaten Rice
-44,Beetroot
-45,Behada
-46,Bengal Gram Dal (Chana Dal)
-47,Bengal Gram(Gram)(Whole)
-48,Ber(Zizyphus/Borehannu)
-49,Betal Leaves
-50,Betelnuts
-51,Bhindi(Ladies Finger)
-52,Bhui Amlaya
-53,Big Gram
-54,Binoula
-55,Bitter gourd
-56,Black Gram (Urd Beans)(Whole)
-57,Black Gram Dal (Urd Dal)
-58,Black pepper
-59,BOP
-60,Borehannu
-61,Bottle gourd
-62,Brahmi
-63,Bran
-64,Bread Fruit
-65,Brinjal
-66,Brocoli
-67,Broken Rice
-68,Broomstick(Flower Broom)
-69,Bull
-70,Bullar
-71,Bunch Beans
-72,Butter
-73,buttery
-74,Cabbage
-75,Calendula
-76,Calf
-77,Camel Hair
-78,Cane
-79,Capsicum
-80,Cardamoms
-81,Carnation
-82,Carrot
-83,Cashew Kernnel
-84,Cashewnuts
-85,Castor Oil
-86,Castor Seed
-87,Cauliflower
-88,Chakotha
-89,Chandrashoor
-90,Chapparad Avare
-91,Chennangi (Whole)
-92,Chennangi Dal
-93,Cherry
-94,Chikoos(Sapota)
-95,Chili Red
-96,Chilly Capsicum
-97,Chironji
-98,Chow Chow
-99,Chrysanthemum
-100,Chrysanthemum(Loose)
-101,Cinamon(Dalchini)
-102,cineraria
-103,Clarkia
-104,Cloves
-105,Cluster beans
-106,Coca
-107,Cock
-108,Cocoa
-109,Coconut
-110,Coconut Oil
-111,Coconut Seed
-112,Coffee
-113,Colacasia
-114,Copra
-115,Coriander(Leaves)
-116,Corriander seed
-117,Cossandra
-118,Cotton
-119,Cotton Seed
-120,Cow
-121,Cowpea (Lobia/Karamani)
-122,Cowpea(Veg)
-123,Cucumbar(Kheera)
-124,Cummin Seed(Jeera)
-125,Curry Leaf
-126,Custard Apple (Sharifa)
-127,Daila(Chandni)
-128,Dal (Avare)
-129,Dalda
-130,Delha
-131,Dhaincha
-132,dhawai flowers
-133,dianthus
-134,Double Beans
-135,Dragon fruit
-136,dried mango
-137,Drumstick
-138,Dry Chillies
-139,Dry Fodder
-140,Dry Grapes
-141,Duck
-142,Duster Beans
-143,Egg
-144,Egypian Clover(Barseem)
-145,Elephant Yam (Suran)
-146,Field Pea
-147,Fig(Anjura/Anjeer)
-148,Firewood
-149,Fish
-150,Flax seeds
-151,Flower Broom
-152,Foxtail Millet(Navane)
-153,French Beans (Frasbean)
-154,Galgal(Lemon)
-155,Gamphrena
-156,Garlic
-157,Ghee
-158,Giloy
-159,Gingelly Oil
-160,Ginger(Dry)
-161,Ginger(Green)
-162,Gladiolus Bulb
-163,Gladiolus Cut Flower
-164,Glardia
-165,Goat
-166,Goat Hair
-167,golden rod
-168,Gond
-169,Goose berry (Nellikkai)
-170,Gram Raw(Chholia)
-171,Gramflour
-172,Grapes
-173,Green Avare (W)
-174,Green Chilli
-175,Green Fodder
-176,Green Gram (Moong)(Whole)
-177,Green Gram Dal (Moong Dal)
-178,Green Peas
-179,Ground Nut Oil
-180,Ground Nut Seed
-181,Groundnut
-182,Groundnut (Split)
-183,Groundnut pods (raw)
-184,Guar
-185,Guar Seed(Cluster Beans Seed)
-186,Guava
-187,Gudmar
-188,Guggal
-189,gulli
-190,Gur(Jaggery)
-191,Gurellu
-192,gypsophila
-193,Haralekai
-194,Harrah
-195,He Buffalo
-196,Heliconia species
-197,Hen
-198,Hippe Seed
-199,Honey
-200,Honge seed
-201,Hybrid Cumbu
-202,hydrangea
-203,Indian Beans (Seam)
-204,Indian Colza(Sarson)
-205,Irish
-206,Isabgul (Psyllium)
-207,Jack Fruit
-208,Jaee
-209,Jaffri
-210,Jaggery
-211,Jamamkhan
-212,Jamun(Narale Hannu)
-213,Jarbara
-214,Jasmine
-215,Javi
-216,Jowar(Sorghum)
-217,Jute
-218,Jute Seed
-219,Kabuli Chana(Chickpeas-White)
-220,Kacholam
-221,Kakada
-222,kakatan
-223,Kalihari
-224,Kalmegh
-225,Kankambra
-226,Karamani
-227,karanja seeds
-228,Karbuja(Musk Melon)
-229,Kartali (Kantola)
-230,Kevda
-231,Kharif Mash
-232,Khirni
-233,Khoya
-234,Kinnow
-235,Knool Khol
-236,Kodo Millet(Varagu)
-237,kokum
-238,Kooth
-239,Kuchur
-240,Kulthi(Horse Gram)
-241,Kutki
-242,kutki
-243,Ladies Finger
-244,Laha
-245,Lak(Teora)
-246,Leafy Vegetable
-247,Lemon
-248,Lentil (Masur)(Whole)
-249,Lilly
-250,Lime
-251,Limonia (status)
-252,Linseed
-253,Lint
-254,liquor turmeric
-255,Litchi
-256,Little gourd (Kundru)
-257,Long Melon(Kakri)
-258,Lotus
-259,Lotus Sticks
-260,Lukad
-261,Lupine
-262,Ma.Inji
-263,Mace
-264,macoy
-265,Mahedi
-266,Mahua
-267,Mahua Seed(Hippe seed)
-268,Maida Atta
-269,Maize
-270,Mango
-271,Mango (Raw-Ripe)
-272,mango powder
-273,Maragensu
-274,Marasebu
-275,Marget
-276,Marigold(Calcutta)
-277,Marigold(loose)
-278,Marikozhunthu
-279,Mash
-280,Mashrooms
-281,Masur Dal
-282,Mataki
-283,Methi Seeds
-284,Methi(Leaves)
-285,Millets
-286,Mint(Pudina)
-287,Moath Dal
-288,Moath Dal
-289,Mousambi(Sweet Lime)
-290,Muesli
-291,Muleti
-292,Muskmelon Seeds
-293,Mustard
-294,Mustard Oil
-295,Myrobolan(Harad)
-296,Nargasi
-297,Nearle Hannu
-298,Neem Seed
-299,Nelli Kai
-300,Nerium
-301,nigella seeds
-302,nigella seeds
-303,Niger Seed (Ramtil)
-304,Nutmeg
-305,Onion
-306,Onion Green
-307,Orange
-308,Orchid
-309,Other green and fresh vegetables
-310,Other Pulses
-311,Ox
-312,Paddy(Dhan)(Basmati)
-313,Paddy(Dhan)(Common)
-314,Palash flowers
-315,Papaya
-316,Papaya (Raw)
-317,Patti Calcutta
-318,Peach
-319,Pear(Marasebu)
-320,Peas cod
-321,Peas Wet
-322,Peas(Dry)
-323,Pegeon Pea (Arhar Fali)
-324,Pepper garbled
-325,Pepper ungarbled
-326,Perandai
+451,Absinthe
+137,Ajwan
+281,Alasande Gram
+325,Almond(Badam)
+166,Alsandikai
+86,Amaranthus
+130,Ambada Seed
+417,Ambady/Mesta
+355,Amla(Nelli Kai)
+102,Amphophalus
+419,Amranthas Red
+209,Antawala
+379,Anthorium
+17,Apple
+326,Apricot(Jardalu/Khumani)
+140,Arecanut(Betelnut/Supari)
+49,Arhar (Tur/Red Gram)(Whole)
+260,Arhar Dal(Tur Dal)
+444,Asalia
+505,Asgand
+83,Ashgourd
+506,Ashoka
+443,Ashwagandha
+434,Asparagus
+232,Astera
+507,Atis
+269,Avare Dal
+418,Bael
+491,Bajji chilli
+28,Bajra(Pearl Millet/Cumbu)
+274,Balekai
+482,balsam
+204,Bamboo
+19,Banana
+90,Banana - Green
+483,Banana flower
+485,Banana Leaf
+484,Banana stem
+29,Barley (Jau)
+435,basil
+321,Bay leaf (Tejpatta)
+94,Beans
+262,Beaten Rice
+157,Beetroot
+508,Behada
+263,Bengal Gram Dal (Chana Dal)
+6,Bengal Gram(Gram)(Whole)
+357,Ber(Zizyphus/Borehannu)
+143,Betal Leaves
+41,Betelnuts
+85,Bhindi(Ladies Finger)
+448,Bhui Amlaya
+113,Big Gram
+51,Binoula
+81,Bitter gourd
+8,Black Gram (Urd Beans)(Whole)
+264,Black Gram Dal (Urd Dal)
+38,Black pepper
+380,BOP
+189,Borehannu
+82,Bottle gourd
+449,Brahmi
+290,Bran
+497,Bread Fruit
+35,Brinjal
+487,Brocoli
+293,Broken Rice
+320,Broomstick(Flower Broom)
+214,Bull
+284,Bullar
+224,Bunch Beans
+272,Butter
+416,buttery
+154,Cabbage
+480,Calendula
+215,Calf
+354,Camel Hair
+205,Cane
+164,Capsicum
+40,Cardamoms
+375,Carnation
+153,Carrot
+238,Cashew Kernnel
+36,Cashewnuts
+270,Castor Oil
+123,Castor Seed
+34,Cauliflower
+188,Chakotha
+438,Chandrashoor
+169,Chapparad Avare
+241,Chennangi (Whole)
+295,Chennangi Dal
+328,Cherry
+71,Chikoos(Sapota)
+26,Chili Red
+88,Chilly Capsicum
+509,Chironji
+167,Chow Chow
+402,Chrysanthemum
+231,Chrysanthemum(Loose)
+316,Cinamon(Dalchini)
+467,cineraria
+478,Clarkia
+105,Cloves
+80,Cluster beans
+315,Coca
+368,Cock
+104,Cocoa
+138,Coconut
+266,Coconut Oil
+112,Coconut Seed
+45,Coffee
+318,Colacasia
+129,Copra
+43,Coriander(Leaves)
+108,Corriander seed
+472,Cossandra
+15,Cotton
+99,Cotton Seed
+212,Cow
+92,Cowpea (Lobia/Karamani)
+89,Cowpea(Veg)
+159,Cucumbar(Kheera)
+42,Cummin Seed(Jeera)
+486,Curry Leaf
+352,Custard Apple (Sharifa)
+382,Daila(Chandni)
+91,Dal (Avare)
+273,Dalda
+410,Delha
+69,Dhaincha
+442,dhawai flowers
+476,dianthus
+492,Double Beans
+495,Dragon fruit
+423,dried mango
+168,Drumstick
+132,Dry Chillies
+345,Dry Fodder
+278,Dry Grapes
+370,Duck
+163,Duster Beans
+367,Egg
+361,Egypian Clover(Barseem)
+296,Elephant Yam (Suran)
+64,Field Pea
+221,Fig(Anjura/Anjeer)
+206,Firewood
+366,Fish
+510,Flax seeds
+365,Flower Broom
+121,Foxtail Millet(Navane)
+298,French Beans (Frasbean)
+350,Galgal(Lemon)
+471,Gamphrena
+25,Garlic
+249,Ghee
+452,Giloy
+276,Gingelly Oil
+27,Ginger(Dry)
+103,Ginger(Green)
+364,Gladiolus Bulb
+363,Gladiolus Cut Flower
+462,Glardia
+219,Goat
+353,Goat Hair
+475,golden rod
+511,Gond
+494,Goose berry (Nellikkai)
+359,Gram Raw(Chholia)
+294,Gramflour
+22,Grapes
+165,Green Avare (W)
+87,Green Chilli
+346,Green Fodder
+9,Green Gram (Moong)(Whole)
+265,Green Gram Dal (Moong Dal)
+50,Green Peas
+267,Ground Nut Oil
+268,Ground Nut Seed
+10,Groundnut
+314,Groundnut (Split)
+312,Groundnut pods (raw)
+75,Guar
+413,Guar Seed(Cluster Beans Seed)
+185,Guava
+453,Gudmar
+454,Guggal
+461,gulli
+74,Gur(Jaggery)
+279,Gurellu
+469,gypsophila
+252,Haralekai
+512,Harrah
+216,He Buffalo
+474,Heliconia species
+369,Hen
+125,Hippe Seed
+236,Honey
+124,Honge seed
+119,Hybrid Cumbu
+473,hydrangea
+299,Indian Beans (Seam)
+344,Indian Colza(Sarson)
+465,Irish
+256,Isabgul (Psyllium)
+182,Jack Fruit
+513,Jaee
+406,Jaffri
+151,Jaggery
+175,Jamamkhan
+184,Jamun(Narale Hannu)
+376,Jarbara
+229,Jasmine
+250,Javi
+5,Jowar(Sorghum)
+16,Jute
+210,Jute Seed
+362,Kabuli Chana(Chickpeas-White)
+317,Kacholam
+230,Kakada
+501,kakatan
+456,Kalihari
+457,Kalmegh
+233,Kankambra
+115,Karamani
+439,karanja seeds
+187,Karbuja(Musk Melon)
+305,Kartali (Kantola)
+481,Kevda
+61,Kharif Mash
+514,Khirni
+372,Khoya
+336,Kinnow
+177,Knool Khol
+117,Kodo Millet(Varagu)
+458,kokum
+459,Kooth
+243,Kuchur
+114,Kulthi(Horse Gram)
+415,Kutki
+426,kutki
+155,Ladies Finger
+515,Laha
+96,Lak(Teora)
+171,Leafy Vegetable
+310,Lemon
+63,Lentil (Masur)(Whole)
+378,Lilly
+180,Lime
+470,Limonia (status)
+67,Linseed
+280,Lint
+432,liquor turmeric
+351,Litchi
+302,Little gourd (Kundru)
+304,Long Melon(Kakri)
+403,Lotus
+339,Lotus Sticks
+337,Lukad
+479,Lupine
+504,Ma.Inji
+107,Mace
+427,macoy
+411,Mahedi
+335,Mahua
+371,Mahua Seed(Hippe seed)
+288,Maida Atta
+4,Maize
+20,Mango
+172,Mango (Raw-Ripe)
+422,mango powder
+225,Maragensu
+181,Marasebu
+407,Marget
+235,Marigold(Calcutta)
+405,Marigold(loose)
+502,Marikozhunthu
+60,Mash
+340,Mashrooms
+259,Masur Dal
+93,Mataki
+47,Methi Seeds
+46,Methi(Leaves)
+237,Millets
+360,Mint(Pudina)
+258,Moath Dal
+95,Moath Dal
+77,Mousambi(Sweet Lime)
+446,Muesli
+428,Muleti
+516,Muskmelon Seeds
+12,Mustard
+324,Mustard Oil
+142,Myrobolan(Harad)
+245,Nargasi
+222,Nearle Hannu
+126,Neem Seed
+223,Nelli Kai
+500,Nerium
+424,nigella seeds
+445,nigella seeds
+98,Niger Seed (Ramtil)
+106,Nutmeg
+23,Onion
+358,Onion Green
+18,Orange
+381,Orchid
+420,Other green and fresh vegetables
+97,Other Pulses
+213,Ox
+414,Paddy(Dhan)(Basmati)
+2,Paddy(Dhan)(Common)
+441,Palash flowers
+72,Papaya
+313,Papaya (Raw)
+404,Patti Calcutta
+331,Peach
+330,Pear(Marasebu)
+308,Peas cod
+174,Peas Wet
+347,Peas(Dry)
+301,Pegeon Pea (Arhar Fali)
+109,Pepper garbled
+110,Pepper ungarbled
+489,Perandai
 327,Persimon(Japani Fal)
-328,Pigs
-329,Pineapple
-330,pippali
-331,Plum
-332,Pointed gourd (Parval)
-333,Polherb
-334,Pomegranate
-335,Poppy capsules
-336,poppy seeds
-337,Potato
-338,Pumpkin
-339,Pundi
-340,Pundi Seed
-341,Pupadia
-342,Raddish
-343,Ragi (Finger Millet)
-344,Raibel
-345,Rajgir
-346,Rala
-347,Ram
-348,Ramphal
-349,Rat Tail Radish (Mogari)
-350,Ratanjot
-351,Raya
-352,Rayee
-353,Red Cabbage
-354,Red Gram
-355,Resinwood
-356,Riccbcan
-357,Rice
-358,Ridgeguard(Tori)
-359,Rose(Local)
-360,Rose(Loose))
-361,Rose(Tata)
-362,Round gourd
-363,Rubber
-364,Sabu Dan
-365,Safflower
-366,Saffron
-367,Sajje
-368,salvia
-369,Same/Savi
-370,sanay
-371,Sandalwood
-372,Sarasum
-373,Season Leaves
-374,Seegu
-375,Seemebadnekai
-376,Seetapal
-377,"Sesamum(Sesame,Gingelly,Til)"
-378,sevanti
-379,She Buffalo
-380,She Goat
-381,Sheep
-382,Siddota
-383,Siru Kizhagu
-384,Skin And Hide
-385,Snakeguard
-386,Soanf
-387,Soapnut(Antawala/Retha)
-388,Soha
-389,Soji
-390,Sompu
-391,Soyabean
-392,spikenard
-393,Spinach
-394,Sponge gourd
-395,Squash(Chappal Kadoo)
-396,stevia
-397,stone pulverizer
-398,Sugar
-399,Sugarcane
-400,Sundaikai
-401,Sunflower
-402,Sunflower Seed
-403,Sunhemp
-404,Suram
-405,Surat Beans (Papadi)
-406,Suva (Dill Seed)
-407,Suvarna Gadde
-408,Sweet Potato
-409,Sweet Pumpkin
-410,Sweet Sultan
-411,sweet william
-412,T.V. Cumbu
-413,Tamarind Fruit
-414,Tamarind Seed
-415,Tapioca
-416,Taramira
-417,Tea
-418,Tender Coconut
-419,Thinai (Italian Millet)
-420,Thogrikai
-421,Thondekai
-422,Tinda
-423,Tobacco
-424,Tomato
-425,Torchwood
-426,Toria
-427,Tube Flower
-428,Tube Rose(Double)
-429,Tube Rose(Loose)
-430,Tube Rose(Single)
-431,Tulasi
-432,tulip
-433,Turmeric
-434,Turmeric (raw)
-435,Turnip
+220,Pigs
+21,Pineapple
+431,pippali
+329,Plum
+303,Pointed gourd (Parval)
+240,Polherb
+190,Pomegranate
+425,Poppy capsules
+421,poppy seeds
+24,Potato
+84,Pumpkin
+254,Pundi
+128,Pundi Seed
+447,Pupadia
+161,Raddish
+30,Ragi (Finger Millet)
+409,Raibel
+248,Rajgir
+517,Rala
+282,Ram
+518,Ramphal
+307,Rat Tail Radish (Mogari)
+460,Ratanjot
+65,Raya
+519,Rayee
+493,Red Cabbage
+7,Red Gram
+322,Resinwood
+62,Riccbcan
+3,Rice
+160,Ridgeguard(Tori)
+374,Rose(Local)
+228,Rose(Loose))
+373,Rose(Tata)
+306,Round gourd
+111,Rubber
+291,Sabu Dan
+59,Safflower
+338,Saffron
+271,Sajje
+468,salvia
+122,Same/Savi
+433,sanay
+450,Sandalwood
+247,Sarasum
+277,Season Leaves
+253,Seegu
+176,Seemebadnekai
+201,Seetapal
+11,"Sesamum(Sesame,Gingelly,Til)"
+464,sevanti
+217,She Buffalo
+283,She Goat
+218,Sheep
+183,Siddota
+490,Siru Kizhagu
+226,Skin And Hide
+156,Snakeguard
+135,Soanf
+207,Soapnut(Antawala/Retha)
+520,Soha
+286,Soji
+246,Sompu
+13,Soyabean
+455,spikenard
+342,Spinach
+311,Sponge gourd
+332,Squash(Chappal Kadoo)
+440,stevia
+430,stone pulverizer
+48,Sugar
+150,Sugarcane
+488,Sundaikai
+14,Sunflower
+285,Sunflower Seed
+139,Sunhemp
+242,Suram
+300,Surat Beans (Papadi)
+255,Suva (Dill Seed)
+178,Suvarna Gadde
+152,Sweet Potato
+173,Sweet Pumpkin
+466,Sweet Sultan
+477,sweet william
+120,T.V. Cumbu
+261,Tamarind Fruit
+208,Tamarind Seed
+100,Tapioca
+76,Taramira
+44,Tea
+200,Tender Coconut
+116,Thinai (Italian Millet)
+170,Thogrikai
+162,Thondekai
+349,Tinda
+141,Tobacco
+78,Tomato
+323,Torchwood
+66,Toria
+234,Tube Flower
+401,Tube Rose(Double)
+408,Tube Rose(Loose)
+377,Tube Rose(Single)
+503,Tulasi
+463,tulip
+39,Turmeric
+309,Turmeric (raw)
+341,Turnip
 436,vadang
 437,Vatsanabha
-438,Walnut
-439,Water Apple
-440,Water chestnut
-441,Water Melon
-442,Wax
-443,Wheat
-444,Wheat Atta
-445,White Muesli
-446,White Peas
-447,White Pumpkin
-448,Wild lemon
-449,Wood
-450,Wood Apple
-451,Wool
-452,Yam
-453,Yam (Ratalu)
-
-
-
-Index,Value
-42,Beans
-156,Garlic
-293,Mustard
-305,Onion
-307,Orange
-337,Potato
-357,Rice
-391,Soyabean
-408,Sweet Potato
-424,Tomato
-443,Wheat
+343,Walnut
+496,Water Apple
+521,Water chestnut
+73,Water Melon
+522,Wax
+1,Wheat
+287,Wheat Atta
+429,White Muesli
+412,White Peas
+158,White Pumpkin
+498,Wild lemon
+203,Wood
+499,Wood Apple
+348,Wool
+244,Yam
+297,Yam (Ratalu)

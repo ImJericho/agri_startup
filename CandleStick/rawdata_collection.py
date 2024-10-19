@@ -12,11 +12,11 @@ import requests
 class AgriDataCollector:
     def __init__(self):
         self.url_template = ("https://agmarknet.gov.in/SearchCmmMkt.aspx?"
-                             "Tx_Commodity=1&Tx_State=MP&Tx_District=12&Tx_Market=2440&"
+                            "Tx_Commodity={commodity_no}&Tx_State={state_no}&Tx_District={district_no}&Tx_Market={market_no}&"
                              "DateFrom={date_from}&DateTo={date_to}&"
                              "Fr_Date={date_from}&To_Date={date_to}&"
                              "Tx_Trend=0&Tx_CommodityHead={commodity}&"
-                             "Tx_StateHead=Madhya+Pradesh&Tx_DistrictHead=Shajapur&Tx_MarketHead=Shajapur")
+                             "Tx_StateHead={state}&Tx_DistrictHead={district}&Tx_MarketHead={market}")
 
     def _select_dropdown(self, driver, element_id, visible_text):
         element = driver.find_element(by=By.ID, value=element_id)
@@ -49,17 +49,49 @@ class AgriDataCollector:
         driver.quit()
 
     # New method using requests
-    def update_url(self, date_from, date_to, commodity):
+
+    def parse_names(name):
+        # name = name.lower()
+        name = name.replace(' ', '+')
+        return name
+
+    def get_commodity_no(self, name):
+        commodity = pd.read_csv('dataset/metadata/commodity_list.csv')
+        commodity_no = commodity[commodity['text'] == name]['value'].values[0]
+        return commodity_no
+    
+    def get_state_no(self, name):
+        state = pd.read_csv('dataset/metadata/state_list.csv')
+        state_no = state[state['text'] == name]['value'].values[0]
+        return state_no
+    
+    def get_district_no(self, name):
+        district = pd.read_csv('dataset/metadata/district_list.csv')
+        district_no = district[district['text'] == name]['value'].values[0]
+        return district_no
+    
+    def get_market_no(self, name):
+        market = pd.read_csv('dataset/metadata/market_list.csv')
+        market_no = market[market['text'] == name]['value'].values[0]
+        return market_no
+
+    def update_url(self, date_from, date_to, commodity, state, district, market):
         print("Updating URL")
+        commodity_no = self.get_commodity_no(commodity)
+        state_no = self.get_state_no("Madhya Pradesh")
+        district_no = self.get_district_no("Shajapur")
+        market_no = self.get_market_no("Shajapur")
+        state
         date_from_str = date_from.strftime('%d-%b-%Y')
         date_to_str = date_to.strftime('%d-%b-%Y')
-        updated_url = self.url_template.format(date_from=date_from_str, date_to=date_to_str, commodity=commodity)
+        updated_url = self.url_template.format(date_from=date_from_str, date_to=date_to_str, commodity=commodity, state=state, district=district, market=market, commodity_no=commodity_no, state_no=state_no, district_no=district_no, market_no=market_no)
+        print("============ ", updated_url, " ============")
         return updated_url
 
     # Using requests 
-    def collect_rawdata(self, date_from = datetime(2024, 1, 1), date_to = datetime(2024, 10, 20), commodity = "wheat"):
+    def collect_rawdata(self, date_from = datetime(2024, 1, 1), date_to = datetime(2024, 10, 20), commodity = "Wheat", state = "Madhya Pradesh", district = "Shajapur", market = "Shajapur"):
         print("Collecting raw data")
-        url = self.update_url(date_from, date_to, commodity)
+        url = self.update_url(date_from, date_to, commodity, state, district, market)
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         table = soup.find('table', {'id': 'cphBody_GridPriceData'})
@@ -67,13 +99,17 @@ class AgriDataCollector:
         headers = [th.text.strip() for th in table.find_all('th')]
         data = [[td.text.strip() for td in tr.find_all('td')] for tr in table.find_all('tr')[1:]]
 
+        if data == [['No Data Found']]:
+            return pd.DataFrame()
         print(data)
         df = pd.DataFrame(data, columns=headers)
         df['formatted_date'] = pd.to_datetime(df['Price Date'], format='%d %b %Y')
         df['formatted_date'] = df['formatted_date'].dt.strftime('%d-%m-%Y')
 
-        csv_file_path = f'dataset/rawdata/{commodity}.csv'
-        df.to_csv(csv_file_path, index=False)
+        # csv_file_path = f'dataset/rawdata/{commodity}.csv'
+        # df.to_csv(csv_file_path, index=False)
+
+        return df
 
 if __name__ == "__main__":
     print("running the main function")
@@ -82,7 +118,12 @@ if __name__ == "__main__":
 
     new_from_date = datetime(2023, 1, 1)
     new_to_date = datetime(2024, 10, 20)
-    commodity = "wheat"
+    commodity = "Wheat"
+    state = "Madhya Pradesh"
+    district = "Shajapur"
+    market = "Shajapur"
 
-    collector.collect_rawdata()
+    # print(collector.get_commodity_no(commodity))
+
+    collector.collect_rawdata(commodity=commodity)
     # collector.collect_rawdata(new_from_date, new_to_date, commodity)
