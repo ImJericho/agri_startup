@@ -68,17 +68,21 @@ def find_all_commodities_of_intrest():
 
 if __name__ == "__main__":
     collector = rdc.AgriDataCollector()
-    new_from_date = datetime(2023, 1, 1)
-    new_to_date = datetime(2024, 10, 18)
+    from_date = datetime(2022, 1, 1)
+    to_date = datetime(2024, 10, 18)
 
     commodities = find_all_commodities_of_intrest()
-    # commodities = ["Potato"]
+    # commodities = ["Garlic"]
 
     mongo_client = mongo_dao.mongo_dao()
 
     for commodity in commodities:
-        print(f"Collecting data for {commodity}")
-        new_data = collector.collect_rawdata(new_from_date, new_to_date, commodity)
-        # upsert_data_locally(commodity, new_data)
-        upsert_data_atlas(mongo_client, commodity, new_data)
-        print(f"Data for {commodity} collected successfully")
+        print(f"EPOC {commodity}")
+        # data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Shajapur", "Shajapur")
+        # upsert_data_atlas(mongo_client, commodity, data)
+
+        data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Shajapur", "Agar")
+        upsert_data_atlas(mongo_client, commodity, data)
+
+        data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Neemuch", "Neemuch")
+        upsert_data_atlas(mongo_client, commodity, data)

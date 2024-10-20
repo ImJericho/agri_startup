@@ -109,9 +109,14 @@ class AgriDataCollector:
         df = pd.DataFrame(data, columns=headers)
         df.rename(columns={'Sl no.': 'Sl No', 'Min Price (Rs./Quintal)': 'Min Price', 'Max Price (Rs./Quintal)': 'Max Price', 'Modal Price (Rs./Quintal)': 'Modal Price'}, inplace=True)
         df['formatted_date'] = pd.to_datetime(df['Price Date'], format='%d %b %Y')
-        df['formatted_date'] = df['formatted_date'].dt.strftime('%d-%m-%Y')
 
-        logging.info("Data collection completed successfully")
+        df['Min Price'] = pd.to_numeric(df['Min Price'], errors='coerce')
+        df['Max Price'] = pd.to_numeric(df['Max Price'], errors='coerce')
+        df['Modal Price'] = pd.to_numeric(df['Modal Price'], errors='coerce')
+        df['Sl No'] = pd.to_numeric(df['Sl No'], errors='coerce')
+
+
+        logging.info(f"Data collection for {commodity} completed successfully")
         return df
 
 if __name__ == "__main__":

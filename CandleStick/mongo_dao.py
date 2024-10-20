@@ -2,6 +2,8 @@ import logging
 from pymongo import MongoClient
 import constants
 import pandas as pd
+from datetime import datetime
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -22,6 +24,28 @@ class mongo_dao:
                 "$lte": end_date
             }
         }
+        logging.info(f"Finding documents in {commodity} collection with query: {query}")
+        documents = collection.find(query)
+        return documents
+    
+    def find_commodities(self, commodity, start_date, end_date):
+        collection = self.db[commodity]
+        query = {
+            'formatted_date': {
+                '$gte': start_date,
+                '$lte': end_date
+            }
+        }
+
+        logging.info(f"Finding documents in {commodity} collection with query: {query}")
+        documents = collection.find(query)
+        return documents
+    
+    def find_commodities(self, commodity):
+        collection = self.db[commodity]
+        query = {
+        }
+
         logging.info(f"Finding documents in {commodity} collection with query: {query}")
         documents = collection.find(query)
         return documents
