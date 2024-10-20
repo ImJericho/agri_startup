@@ -1,4 +1,4 @@
-formatted_date,Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+formatted_date,Sl No,District Name,Market Name,Commodity,Variety,Grade,Min Price,Max Price,Modal Price,Price Date
 01-01-2023,42,Shajapur,Shajapur,Wheat,Other,FAQ,2250,2505,2400,01 Jan 2023
 01-02-2023,177,Shajapur,Shajapur,Wheat,Other,FAQ,2401,2721,2576,01 Feb 2023
 01-03-2023,322,Shajapur,Shajapur,Wheat,Other,FAQ,1800,2418,2182,01 Mar 2023

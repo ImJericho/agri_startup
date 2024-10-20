@@ -1,4 +1,4 @@
-formatted_date,Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+formatted_date,Sl No,District Name,Market Name,Commodity,Variety,Grade,Min Price,Max Price,Modal Price,Price Date
 01-01-2024,295,Shajapur,Shajapur,Soyabean,Yellow,FAQ,3500,4870,4280,01 Jan 2024
 01-02-2023,332,Shajapur,Shajapur,Soyabean,Yellow,FAQ,3690,5399,5075,01 Feb 2023
 01-02-2024,233,Shajapur,Shajapur,Soyabean,Yellow,FAQ,2800,4435,4190,01 Feb 2024

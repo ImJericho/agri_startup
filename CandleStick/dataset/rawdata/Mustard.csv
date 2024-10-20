@@ -1,4 +1,4 @@
-formatted_date,Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+formatted_date,Sl No,District Name,Market Name,Commodity,Variety,Grade,Min Price,Max Price,Modal Price,Price Date
 01-02-2023,14,Shajapur,Shajapur,Mustard,Other,FAQ,4000,5454,4631,01 Feb 2023
 01-02-2024,217,Shajapur,Shajapur,Mustard,Mustard,FAQ,3940,3940,4260,01 Feb 2024
 01-03-2023,221,Shajapur,Shajapur,Mustard,Other,FAQ,4500,5100,4850,01 Mar 2023

@@ -1,4 +1,4 @@
-formatted_date,Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+formatted_date,Sl No,District Name,Market Name,Commodity,Variety,Grade,Min Price,Max Price,Modal Price,Price Date
 01-01-2024,166,Shajapur,Shajapur,Potato,Potato,FAQ,101,884,101,01 Jan 2024
 01-02-2024,174,Shajapur,Shajapur,Potato,Local,FAQ,569,774,1100,01 Feb 2024
 01-03-2024,126,Shajapur,Shajapur,Potato,Potato,FAQ,616,1429,1400,01 Mar 2024

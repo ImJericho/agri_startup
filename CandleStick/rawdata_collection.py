@@ -1,3 +1,4 @@
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -8,6 +9,9 @@ from datetime import datetime
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class AgriDataCollector:
     def __init__(self):
@@ -48,10 +52,7 @@ class AgriDataCollector:
 
         driver.quit()
 
-    # New method using requests
-
     def parse_names(name):
-        # name = name.lower()
         name = name.replace(' ', '+')
         return name
 
@@ -76,45 +77,46 @@ class AgriDataCollector:
         return market_no
 
     def update_url(self, date_from, date_to, commodity, state, district, market):
-        print("Updating URL")
+        logging.info("Updating URL with provided parameters")
         commodity_no = self.get_commodity_no(commodity)
-        state_no = self.get_state_no("Madhya Pradesh")
-        district_no = self.get_district_no("Shajapur")
-        market_no = self.get_market_no("Shajapur")
-        state
+        state_no = self.get_state_no(state)
+        district_no = self.get_district_no(district)
+        market_no = self.get_market_no(market)
         date_from_str = date_from.strftime('%d-%b-%Y')
         date_to_str = date_to.strftime('%d-%b-%Y')
         updated_url = self.url_template.format(date_from=date_from_str, date_to=date_to_str, commodity=commodity, state=state, district=district, market=market, commodity_no=commodity_no, state_no=state_no, district_no=district_no, market_no=market_no)
-        print("============ ", updated_url, " ============")
+        logging.info(f"Updated URL: {updated_url}")
         return updated_url
 
-    # Using requests 
-    def collect_rawdata(self, date_from = datetime(2024, 1, 1), date_to = datetime(2024, 10, 20), commodity = "Wheat", state = "Madhya Pradesh", district = "Shajapur", market = "Shajapur"):
-        print("Collecting raw data")
+    def collect_rawdata(self, date_from=datetime(2024, 1, 1), date_to=datetime(2024, 10, 20), commodity="Wheat", state="Madhya Pradesh", district="Shajapur", market="Shajapur"):
+        logging.info("Starting raw data collection")
         url = self.update_url(date_from, date_to, commodity, state, district, market)
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         table = soup.find('table', {'id': 'cphBody_GridPriceData'})
 
+        if not table:
+            logging.warning("No data table found on the page")
+            return pd.DataFrame()
+
         headers = [th.text.strip() for th in table.find_all('th')]
         data = [[td.text.strip() for td in tr.find_all('td')] for tr in table.find_all('tr')[1:]]
 
         if data == [['No Data Found']]:
+            logging.info("No data found for the given parameters")
             return pd.DataFrame()
-        print(data)
+
         df = pd.DataFrame(data, columns=headers)
+        df.rename(columns={'Sl no.': 'Sl No', 'Min Price (Rs./Quintal)': 'Min Price', 'Max Price (Rs./Quintal)': 'Max Price', 'Modal Price (Rs./Quintal)': 'Modal Price'}, inplace=True)
         df['formatted_date'] = pd.to_datetime(df['Price Date'], format='%d %b %Y')
         df['formatted_date'] = df['formatted_date'].dt.strftime('%d-%m-%Y')
 
-        # csv_file_path = f'dataset/rawdata/{commodity}.csv'
-        # df.to_csv(csv_file_path, index=False)
-
+        logging.info("Data collection completed successfully")
         return df
 
 if __name__ == "__main__":
-    print("running the main function")
+    logging.info("Running the main function")
     collector = AgriDataCollector()
-    # collector.old_method_using_selenium()
 
     new_from_date = datetime(2023, 1, 1)
     new_to_date = datetime(2024, 10, 20)
@@ -123,7 +125,4 @@ if __name__ == "__main__":
     district = "Shajapur"
     market = "Shajapur"
 
-    # print(collector.get_commodity_no(commodity))
-
     collector.collect_rawdata(commodity=commodity)
-    # collector.collect_rawdata(new_from_date, new_to_date, commodity)

@@ -1,4 +1,4 @@
-formatted_date,Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date
+formatted_date,Sl No,District Name,Market Name,Commodity,Variety,Grade,Min Price,Max Price,Modal Price,Price Date
 01-01-2024,111,Shajapur,Shajapur,Onion,Medium,FAQ,1179,1780,1179,01 Jan 2024
 01-02-2024,320,Shajapur,Shajapur,Onion,Medium,FAQ,130,1287,655,01 Feb 2024
 01-03-2024,65,Shajapur,Shajapur,Onion,Onion,FAQ,650,1386,857,01 Mar 2024
