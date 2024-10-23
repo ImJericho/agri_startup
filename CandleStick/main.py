@@ -1,7 +1,12 @@
-import rawdata_collection as rdc
+import data_collection.rawdata_collection as rdc
 from datetime import datetime, timedelta, timezone
 import pandas as pd
-import mongo_dao
+import dao.mongo_dao as mongo_dao
+import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class TimeDataHandler:
     def __init__(self):
@@ -34,14 +39,14 @@ def upsert_data_locally(commodity, new_data):
         existing_df = pd.read_csv(file_path)
     except FileNotFoundError:
         # If file doesn't exist, create an empty DataFrame with the required columns
-        print(f"File not found for {commodity}. Creating a new file.")
+        logging.warning(f"File not found for {commodity}. Creating a new file.")
         existing_df = pd.DataFrame(columns=["Sl no.", "District Name", "Market Name", "Commodity", "Variety", "Grade", 
                                             "Min Price (Rs./Quintal)", "Max Price (Rs./Quintal)", 
                                             "Modal Price (Rs./Quintal)", "Price Date", "formatted_date"])
     new_df = pd.DataFrame(new_data)
     if new_data.empty:
         existing_df.to_csv(file_path, index=False)
-        print("No new data provided for upsert. Operation skipped.")
+        logging.info("No new data provided for upsert. Operation skipped.")
         return
     # Ensure that both DataFrames have 'formatted_date' as a string type
     existing_df['formatted_date'] = existing_df['formatted_date'].astype(str)
@@ -52,37 +57,60 @@ def upsert_data_locally(commodity, new_data):
     updated_df = updated_df.groupby(updated_df.index).last().reset_index()
     # Save the updated data back to the CSV
     updated_df.to_csv(file_path, index=False)
-    print("Data upserted on Local successfully!")
-
+    logging.info("Data upserted on Local successfully!")
 
 def upsert_data_atlas(md, commodity, new_data):
     md.upsert_transactions(commodity, new_data)
-    print("Data upserted on Atals successfully!")
+    logging.info("Data upserted on Atlas successfully!")
 
 def find_all_commodities_of_intrest():
     df = pd.read_csv("dataset/metadata/commodity_of_intrest.csv")
-    commodities = df["Value"].tolist()
-    print("commodities of interest:", commodities)
+    commodities = df["Name"].tolist()
+    logging.info(f"Commodities of interest: {commodities}")
     return commodities
+
+def process_commodity_manual(commodity, from_date, to_date, market_list, mongo_client, collector):
+    for _, market in market_list.iterrows():
+        data = collector.collect_rawdata(from_date, to_date, commodity, market['state'], market['district'], market['text'])
+        upsert_data_atlas(mongo_client, commodity, data)
+        logging.info(f"Data collected for {market['text']}, and of size {data.shape}")
+
+def process_commodity(commodity, cron, market_list, mongo_client):
+    collector = rdc.AgriDataCollector()
+    from_date = cron.loc[cron['name'] == "Wheat", 'last scrap date'].values[0]
+    from_date = datetime.strptime(from_date, '%Y-%m-%d')
+    to_date = datetime.now()
+
+    print(f"===called for {commodity}")
+    for _, market in market_list.iterrows():
+        data = collector.collect_rawdata(from_date, to_date, commodity, market['state'], market['district'], market['text'])
+        upsert_data_atlas(mongo_client, commodity, data)
+        logging.info(f"Data collected for {market['text']}, and of size {data.shape}")
+
+    cron.loc[cron['name'] == commodity, 'last scrap date'] = to_date.strftime('%Y-%m-%d')
+    cron.to_csv("cron.csv", index=False)
+
 
 
 if __name__ == "__main__":
-    collector = rdc.AgriDataCollector()
-    from_date = datetime(2022, 1, 1)
-    to_date = datetime(2024, 10, 18)
 
-    commodities = find_all_commodities_of_intrest()
-    # commodities = ["Garlic"]
-
+    market_list = pd.read_csv("dataset/metadata/market_list.csv")
     mongo_client = mongo_dao.mongo_dao()
 
+    cron_job = pd.read_csv("cron.csv")
+    print(cron_job.head())
+
+    commodities = find_all_commodities_of_intrest()
+    new_commodities = []
     for commodity in commodities:
-        print(f"EPOC {commodity}")
-        # data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Shajapur", "Shajapur")
-        # upsert_data_atlas(mongo_client, commodity, data)
+        if cron_job.loc[cron_job['name'] == commodity, 'active'].values[0] == 1:
+            new_commodities.append(commodity)
 
-        data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Shajapur", "Agar")
-        upsert_data_atlas(mongo_client, commodity, data)
 
-        data = collector.collect_rawdata(from_date, to_date, commodity, "Madhya Pradesh", "Neemuch", "Neemuch")
-        upsert_data_atlas(mongo_client, commodity, data)
+    with ThreadPoolExecutor() as executor:
+        futures = [executor.submit(process_commodity, commodity, cron_job, market_list, mongo_client) for commodity in new_commodities]
+        for future in as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                logging.error(f"Error processing commodity: {e}")

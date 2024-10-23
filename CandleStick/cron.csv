@@ -1,0 +1,12 @@
+sno,name,type,last scrap date,active
+1,Wheat,commodity,2024-10-24,True
+2,Rice,commodity,2024-10-24,True
+3,Soyabean,commodity,2024-10-24,True
+4,Mustard,commodity,2024-10-24,True
+5,Potato,commodity,2021-01-01,False
+6,Onion,commodity,2021-01-01,False
+7,Tomato,commodity,2021-01-01,False
+8,Orange,commodity,2021-01-01,False
+9,Garlic,commodity,2024-10-24,True
+10,Corriander seed,commodity,2024-10-24,True
+11,Maize,commodity,2024-10-24,True

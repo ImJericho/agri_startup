@@ -1,22 +1,84 @@
-value,text
-0,--Select--
-1381,Agar
-4204,Akodiya
-10509,Akodiya(F&V)
-2729,Badod
-3050,Berachha
-10528,Bercha(F&V)
-2447,Kalapipal
-10566,Kalapipal(F&V)
-2712,Maksi
-10591,Maksi(F&V)
-2718,Momanbadodiya
-10599,Momanbadodiya(F&V)
-2458,Nalkehda
-2440,Shajapur
-3885,Shajapur(F&V)
-1128,Shujalpur
-10635,Shujalpur(F&V)
-4210,Soyatkalan
-2723,Susner
-190,Neemuch
+value,text,state,district
+1381,Agar,Madhya Pradesh,Shajapur
+4204,Akodiya,Madhya Pradesh,Shajapur
+10509,Akodiya(F&V),Madhya Pradesh,Shajapur
+2729,Badod,Madhya Pradesh,Shajapur
+3050,Berachha,Madhya Pradesh,Shajapur
+10528,Bercha(F&V),Madhya Pradesh,Shajapur
+2447,Kalapipal,Madhya Pradesh,Shajapur
+10566,Kalapipal(F&V),Madhya Pradesh,Shajapur
+2712,Maksi,Madhya Pradesh,Shajapur
+10591,Maksi(F&V),Madhya Pradesh,Shajapur
+2718,Momanbadodiya,Madhya Pradesh,Shajapur
+10599,Momanbadodiya(F&V),Madhya Pradesh,Shajapur
+2458,Nalkehda,Madhya Pradesh,Shajapur
+2440,Shajapur,Madhya Pradesh,Shajapur
+3885,Shajapur(F&V),Madhya Pradesh,Shajapur
+1128,Shujalpur,Madhya Pradesh,Shajapur
+10635,Shujalpur(F&V),Madhya Pradesh,Shajapur
+4210,Soyatkalan,Madhya Pradesh,Shajapur
+2723,Susner,Madhya Pradesh,Shajapur
+10508,Agar(F&V),Madhya Pradesh,Agar Malwa
+10518,Badod(F&V),Madhya Pradesh,Agar Malwa
+10603,Nalkheda(F&V),Madhya Pradesh,Agar Malwa
+10641,Soyatkalan(F&V),Madhya Pradesh,Agar Malwa
+10642,Susner(F&V),Madhya Pradesh,Agar Malwa
+3135,Bagli,Madhya Pradesh,Dewas
+182,Dewas,Madhya Pradesh,Dewas
+3881,Dewas(F&V),Madhya Pradesh,Dewas
+2721,Haatpipliya,Madhya Pradesh,Dewas
+10554,Hatpiplya(F&V),Madhya Pradesh,Dewas
+2445,Kannod,Madhya Pradesh,Dewas
+10567,Kannod(F&V),Madhya Pradesh,Dewas
+1378,Khategaon,Madhya Pradesh,Dewas
+10576,Khategaon(F&V),Madhya Pradesh,Dewas
+2695,Loharda,Madhya Pradesh,Dewas
+10586,Loharda(F&V),Madhya Pradesh,Dewas
+10639,Sonkachh(F&V),Madhya Pradesh,Dewas
+1379,Sonkatch,Madhya Pradesh,Dewas
+2457,Gautampura,Madhya Pradesh,Indore
+10549,Gautampura(F&V),Madhya Pradesh,Indore
+3873,Indore,Madhya Pradesh,Indore
+187,Indore(F&V),Madhya Pradesh,Indore
+819,Mhow,Madhya Pradesh,Indore
+10597,Mhow(F&V),Madhya Pradesh,Indore
+2417,Sanwer,Madhya Pradesh,Indore
+10626,Sanwer(F&V),Madhya Pradesh,Indore
+3134,Javad,Madhya Pradesh,Neemuch
+10558,Jawad(F&V),Madhya Pradesh,Neemuch
+2455,Manasa,Madhya Pradesh,Neemuch
+10593,Manasa(F&V),Madhya Pradesh,Neemuch
+190,Neemuch,Madhya Pradesh,Neemuch
+10606,Neemuch(F&V),Madhya Pradesh,Neemuch
+1834,Biaora,Madhya Pradesh,Rajgarh
+10533,Biaora(F&V),Madhya Pradesh,Rajgarh
+2726,Chhapiheda,Madhya Pradesh,Rajgarh
+2448,Jeerapur,Madhya Pradesh,Rajgarh
+10562,Jirapur(F&V),Madhya Pradesh,Rajgarh
+2702,Khilchipur,Madhya Pradesh,Rajgarh
+2724,Khujner,Madhya Pradesh,Rajgarh
+10579,Khujner(F&V),Madhya Pradesh,Rajgarh
+2698,Kurawar,Madhya Pradesh,Rajgarh
+3047,Machalpur,Madhya Pradesh,Rajgarh
+10587,Machalpur(F&V),Madhya Pradesh,Rajgarh
+2429,Narsinghgarh,Madhya Pradesh,Rajgarh
+10604,Narsinghgarh(F&V),Madhya Pradesh,Rajgarh
+2428,Pachaur,Madhya Pradesh,Rajgarh
+10609,Pachaur(F&V),Madhya Pradesh,Rajgarh
+2709,Sarangpur,Madhya Pradesh,Rajgarh
+10627,Sarangpur(F&V),Madhya Pradesh,Rajgarh
+3059,Suthalia,Madhya Pradesh,Rajgarh
+2425,Badnagar,Madhya Pradesh,Ujjain
+10517,Badnagar(F&V),Madhya Pradesh,Ujjain
+10572,Khaachrod(F&V),Madhya Pradesh,Ujjain
+2708,Khachrod,Madhya Pradesh,Ujjain
+1376,Mahidpur,Madhya Pradesh,Ujjain
+10589,Mahidpur(F&V),Madhya Pradesh,Ujjain
+2463,Nagda,Madhya Pradesh,Ujjain
+10602,Nagda(F&V),Madhya Pradesh,Ujjain
+1377,Tarana,Madhya Pradesh,Ujjain
+10645,Tarana(F&V),Madhya Pradesh,Ujjain
+197,Ujjain,Madhya Pradesh,Ujjain
+3880,Ujjain(F&V),Madhya Pradesh,Ujjain
+2717,Unhel,Madhya Pradesh,Ujjain
+10649,Unhel(F&V),Madhya Pradesh,Ujjain
