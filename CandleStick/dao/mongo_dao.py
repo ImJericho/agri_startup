@@ -1,6 +1,6 @@
 import logging
 from pymongo import MongoClient
-import constants
+from . import ENV_VAR 
 import pandas as pd
 from datetime import datetime
 
@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 class mongo_dao:
     def __init__(self, db_name = "CropsRealPrices"):
-        client = MongoClient(constants.MONGO_URL)
+        client = MongoClient(ENV_VAR.MONGO_URL)
         self.db = client[db_name]
         logging.info(f"Connected to MongoDB database: {db_name}")
     
