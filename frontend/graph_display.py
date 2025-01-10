@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
+import streamlit as st
 
 
 
@@ -16,7 +17,7 @@ def candlestick_chart(df, show_fig=False):
     return fig
 
 def time_series_graph(df, show_fig=False):
-    fig = px.line(df, x="formatted_date", y="Modal Price", title='Time Series', color='Market Name')
+    fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
     fig.update_xaxes(
         dtick="M1",
         tickformat="%b\n%Y",
@@ -27,7 +28,7 @@ def time_series_graph(df, show_fig=False):
     return fig
 
 def time_series_graph_with_avg_prices(df, show_fig=False):
-    fig = px.line(df, x="formatted_date", y="Modal Price", title='Time Series', color='Market Name')
+    fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
     fig.update_xaxes(
         dtick="M1",
         tickformat="%b\n%Y",
