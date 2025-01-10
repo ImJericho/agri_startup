@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 import mongo_dao as md
-import plotly.express as px
 import graph_display as graph_display
 import utils
 from datetime import datetime
+import backend
 
 st.set_page_config(
     page_title="Crop Market Prices",
@@ -26,16 +26,14 @@ Welcome to the Crop Market Prices Dashboard. Here you can explore and analyze th
 ''
 
 mongo_dao = md.mongo_dao()
-min_date = 2023
+min_date = 2020
 max_date = 2025
-
-
 
 # commodity_list = utils.get_commodity_list()
 commodity_list = mongo_dao.get_commodity_list()
 
 
-tab1, tab2 = st.tabs(["Time Series Graph with Avg Prices", "Time Series Graph with Districts"])
+tab1, tab2, tab3 = st.tabs(["Time Series Graph with Avg Prices", "Time Series Graph with Districts", "Update Data in Atlas"])
 with tab1:
     commodity = st.selectbox("Select Commodity", commodity_list, key="commodity_tab2")
     from_year, to_year = st.slider(
@@ -78,3 +76,29 @@ with tab2:
         data = graph_display.process_data(data)
         filtered_df = data[data["Market Name"].isin(markets)]
         st.plotly_chart(graph_display.time_series_graph(filtered_df))
+
+
+with tab3:
+    market_list = pd.read_csv("backend/data/metadata/market_list.csv")
+    cron_job = pd.read_csv("backend/cron.csv")
+    commodities =utils.get_commodity_list()
+
+    st.write("### Update Data in Atlas")
+
+    # Create a DataFrame for displaying commodities with a serial number
+    commodities_df = pd.DataFrame({
+        "S.No": range(1, len(commodities) + 1),
+        "Commodity": commodities
+    })
+
+    # Display the table with a button in the third column
+    for index, row in commodities_df.iterrows():
+        col1, col2, col3 = st.columns([1, 3, 1])
+        col1.write(row["S.No"])
+        col2.write(row["Commodity"])
+        if col3.button("Update", key=f"update_{index}"):
+            done = backend.process_commodity(row["Commodity"], cron_job, market_list)
+            if done:
+                st.success(f"Update for {row['Commodity']} is complete.")
+            else:
+                st.error(f"Update for {row['Commodity']} failed.")

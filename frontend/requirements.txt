@@ -3,3 +3,6 @@ plotly-express
 datetime
 python-dotenv
 pymongo
+beautifulsoup4
+logging
+requests
