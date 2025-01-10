@@ -64,7 +64,7 @@ def upsert_data_atlas(md, commodity, new_data):
     logging.info("Data upserted on Atlas successfully!")
 
 def find_all_commodities_of_intrest():
-    df = pd.read_csv("dataset/metadata/commodity_of_intrest.csv")
+    df = pd.read_csv("/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/commodity_of_intrest.csv")
     commodities = df["Name"].tolist()
     logging.info(f"Commodities of interest: {commodities}")
     return commodities
@@ -94,10 +94,10 @@ def process_commodity(commodity, cron, market_list, mongo_client):
 
 if __name__ == "__main__":
 
-    market_list = pd.read_csv("dataset/metadata/market_list.csv")
+    market_list = pd.read_csv("/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/market_list.csv")
     mongo_client = mongo_dao.mongo_dao()
 
-    cron_job = pd.read_csv("cron.csv")
+    cron_job = pd.read_csv("/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/cron.csv")
     print(cron_job.head())
 
     commodities = find_all_commodities_of_intrest()

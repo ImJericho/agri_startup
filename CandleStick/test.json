@@ -1,0 +1,10 @@
+<div class="loader">
+                    <div id="UpdateProgress1" style="display: none;" role="status" aria-hidden="true">
+	
+                            <div>
+                                <span id="lblWait"> Please wait... </span>
+                                <img id="imgWait" src="images/loader.gif" align="middle">
+                            </div>
+                        
+</div>
+                </div>

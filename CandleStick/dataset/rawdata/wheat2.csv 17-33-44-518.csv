@@ -1,0 +1,148 @@
+Sl no.,District Name,Market Name,Commodity,Variety,Grade,Min Price (Rs./Quintal),Max Price (Rs./Quintal),Modal Price (Rs./Quintal),Price Date,formatted_date
+1,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2195,2411,2300,15 Mar 2024,15-03-2024
+2,Shajapur,Shajapur,Wheat,Wheat,FAQ,2561,2860,2570,21 Aug 2024,21-08-2024
+3,Shajapur,Shajapur,Wheat,Wheat,FAQ,2551,2893,2893,20 Aug 2024,20-08-2024
+4,Shajapur,Shajapur,Wheat,Local,FAQ,1875,2844,2300,19 Mar 2024,19-03-2024
+5,Shajapur,Shajapur,Wheat,Local,FAQ,2125,2752,2350,22 Feb 2024,22-02-2024
+6,Shajapur,Shajapur,Wheat,Local,FAQ,2181,2790,2400,23 Feb 2024,23-02-2024
+7,Shajapur,Shajapur,Wheat,Wheat,FAQ,2550,2875,2700,14 Oct 2024,14-10-2024
+8,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2804,2255,04 May 2024,04-05-2024
+9,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2330,2370,2415,05 Apr 2024,05-04-2024
+10,Shajapur,Shajapur,Wheat,Wheat,FAQ,2561,3033,2650,05 Sep 2024,05-09-2024
+11,Shajapur,Shajapur,Wheat,Wheat,FAQ,2550,2942,2790,18 Sep 2024,18-09-2024
+12,Shajapur,Shajapur,Wheat,Local,FAQ,2160,2750,2400,05 Jun 2024,05-06-2024
+13,Shajapur,Shajapur,Wheat,Local,FAQ,1770,2631,2340,04 Mar 2024,04-03-2024
+14,Shajapur,Shajapur,Wheat,Local,FAQ,1690,2902,2400,31 May 2024,31-05-2024
+15,Shajapur,Shajapur,Wheat,Local,FAQ,1995,2635,2250,06 Mar 2024,06-03-2024
+16,Shajapur,Shajapur,Wheat,Local,FAQ,2110,2986,2400,30 Apr 2024,30-04-2024
+17,Shajapur,Shajapur,Wheat,Wheat,FAQ,2538,2941,2800,23 Sep 2024,23-09-2024
+18,Shajapur,Shajapur,Wheat,Local,FAQ,2100,3035,2300,20 Apr 2024,20-04-2024
+19,Shajapur,Shajapur,Wheat,Local,FAQ,2100,2711,2300,20 Feb 2024,20-02-2024
+20,Shajapur,Shajapur,Wheat,Local,FAQ,2170,2815,2200,06 Apr 2024,06-04-2024
+21,Shajapur,Shajapur,Wheat,Local,FAQ,2130,3032,2300,16 Apr 2024,16-04-2024
+22,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2444,2462,2300,16 Apr 2024,16-04-2024
+23,Shajapur,Shajapur,Wheat,Local,FAQ,1812,2830,2426,18 May 2024,18-05-2024
+24,Shajapur,Shajapur,Wheat,Wheat,FAQ,2586,2933,2650,01 Oct 2024,01-10-2024
+25,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2891,2380,17 May 2024,17-05-2024
+26,Shajapur,Shajapur,Wheat,Wheat,FAQ,2599,2959,2650,24 Sep 2024,24-09-2024
+27,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2999,2400,29 May 2024,29-05-2024
+28,Shajapur,Shajapur,Wheat,Local,FAQ,2270,2960,2300,24 Apr 2024,24-04-2024
+29,Shajapur,Shajapur,Wheat,Local,FAQ,2062,2631,2300,02 Mar 2024,02-03-2024
+30,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,3046,2860,27 Aug 2024,27-08-2024
+31,Shajapur,Shajapur,Wheat,Wheat,FAQ,2500,3170,2580,09 Aug 2024,09-08-2024
+32,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2869,2400,24 May 2024,24-05-2024
+33,Shajapur,Shajapur,Wheat,Wheat,FAQ,2535,3062,2700,07 Aug 2024,07-08-2024
+34,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2350,2350,17 Apr 2024,17-04-2024
+35,Shajapur,Shajapur,Wheat,Local,FAQ,1100,2901,2500,10 Jun 2024,10-06-2024
+36,Shajapur,Shajapur,Wheat,Local,FAQ,2115,2902,2368,15 May 2024,15-05-2024
+37,Shajapur,Shajapur,Wheat,Wheat,FAQ,2500,2969,2670,19 Sep 2024,19-09-2024
+38,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,2900,2752,30 Sep 2024,30-09-2024
+39,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2336,2368,2300,03 Apr 2024,03-04-2024
+40,Shajapur,Shajapur,Wheat,Wheat,FAQ,2550,2950,2600,14 Aug 2024,14-08-2024
+41,Shajapur,Shajapur,Wheat,Wheat,FAQ,2412,2969,2969,09 Sep 2024,09-09-2024
+42,Shajapur,Shajapur,Wheat,Lokwan,FAQ,2550,2665,2400,30 Apr 2024,30-04-2024
+43,Shajapur,Shajapur,Wheat,Local,FAQ,2360,2901,2450,13 Jun 2024,13-06-2024
+44,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2799,2400,19 Feb 2024,19-02-2024
+45,Shajapur,Shajapur,Wheat,Local,FAQ,2090,2711,2300,26 Feb 2024,26-02-2024
+46,Shajapur,Shajapur,Wheat,Local,FAQ,2195,2980,2525,07 Jun 2024,07-06-2024
+47,Shajapur,Shajapur,Wheat,Local,FAQ,2099,2802,2415,12 Mar 2024,12-03-2024
+48,Shajapur,Shajapur,Wheat,Local,FAQ,1800,2700,2300,27 Feb 2024,27-02-2024
+49,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,1950,2360,2300,18 Mar 2024,18-03-2024
+50,Shajapur,Shajapur,Wheat,Local,FAQ,2485,2600,2485,25 Feb 2024,25-02-2024
+51,Shajapur,Shajapur,Wheat,Local,FAQ,1615,2969,2300,09 May 2024,09-05-2024
+52,Shajapur,Shajapur,Wheat,Local,FAQ,2000,2693,2401,14 Mar 2024,14-03-2024
+53,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,3039,2654,25 Sep 2024,25-09-2024
+54,Shajapur,Shajapur,Wheat,Local,FAQ,1696,2980,2300,03 May 2024,03-05-2024
+55,Shajapur,Shajapur,Wheat,Local,FAQ,2200,2855,2371,16 May 2024,16-05-2024
+56,Shajapur,Shajapur,Wheat,Wheat,FAQ,2585,3050,2612,11 Sep 2024,11-09-2024
+57,Shajapur,Shajapur,Wheat,Local,FAQ,2100,2760,2300,21 Feb 2024,21-02-2024
+58,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2333,2333,2200,06 Apr 2024,06-04-2024
+59,Shajapur,Shajapur,Wheat,Wheat,FAQ,2575,2910,2585,12 Sep 2024,12-09-2024
+60,Shajapur,Shajapur,Wheat,Local,FAQ,1500,4630,2300,22 Mar 2024,22-03-2024
+61,Shajapur,Shajapur,Wheat,Local,FAQ,2110,2900,2400,06 May 2024,06-05-2024
+62,Shajapur,Shajapur,Wheat,Local,FAQ,2233,2650,2399,02 May 2024,02-05-2024
+63,Shajapur,Shajapur,Wheat,Lokwan,FAQ,2300,2300,2300,20 Apr 2024,20-04-2024
+64,Shajapur,Shajapur,Wheat,Local,FAQ,2122,2711,2300,15 Mar 2024,15-03-2024
+65,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2923,2400,14 Jun 2024,14-06-2024
+66,Shajapur,Shajapur,Wheat,Local,FAQ,2150,2878,2415,05 Apr 2024,05-04-2024
+67,Shajapur,Shajapur,Wheat,Wheat,FAQ,2503,2969,2891,05 Aug 2024,05-08-2024
+68,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2320,2315,26 Mar 2024,26-03-2024
+69,Shajapur,Shajapur,Wheat,Wheat,FAQ,2699,2891,2750,09 Oct 2024,09-10-2024
+70,Shajapur,Shajapur,Wheat,Local,FAQ,2175,2912,2480,03 Jun 2024,03-06-2024
+71,Shajapur,Shajapur,Wheat,Wheat,FAQ,2590,3061,2600,10 Sep 2024,10-09-2024
+72,Shajapur,Shajapur,Wheat,Wheat,FAQ,2541,3151,2612,23 Aug 2024,23-08-2024
+73,Shajapur,Shajapur,Wheat,Wheat,FAQ,2500,3070,2900,13 Sep 2024,13-09-2024
+74,Shajapur,Shajapur,Wheat,Local,FAQ,1906,2710,2325,29 Feb 2024,29-02-2024
+75,Shajapur,Shajapur,Wheat,Local,FAQ,2400,2793,2530,25 Jun 2024,25-06-2024
+76,Shajapur,Shajapur,Wheat,Wheat,FAQ,2562,2900,2649,06 Sep 2024,06-09-2024
+77,Shajapur,Shajapur,Wheat,Wheat,FAQ,2500,3030,3030,08 Oct 2024,08-10-2024
+78,Shajapur,Shajapur,Wheat,Local,FAQ,2082,2612,2370,16 Mar 2024,16-03-2024
+79,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2191,2414,2401,14 Mar 2024,14-03-2024
+80,Shajapur,Shajapur,Wheat,Local,FAQ,1725,2950,2350,04 Apr 2024,04-04-2024
+81,Shajapur,Shajapur,Wheat,Wheat,FAQ,2626,3051,2664,03 Sep 2024,03-09-2024
+82,Shajapur,Shajapur,Wheat,Local,FAQ,2155,2980,2400,15 Apr 2024,15-04-2024
+83,Shajapur,Shajapur,Wheat,Local,FAQ,2266,2771,2680,26 Jun 2024,26-06-2024
+84,Shajapur,Shajapur,Wheat,Local,FAQ,2200,3080,2365,18 Apr 2024,18-04-2024
+85,Shajapur,Shajapur,Wheat,Local,FAQ,2100,3072,2462,22 Apr 2024,22-04-2024
+86,Shajapur,Shajapur,Wheat,Wheat,FAQ,2550,2850,2770,21 Sep 2024,21-09-2024
+87,Shajapur,Shajapur,Wheat,Wheat,FAQ,2551,3040,2600,13 Aug 2024,13-08-2024
+88,Shajapur,Shajapur,Wheat,Wheat,FAQ,2605,2922,2741,27 Sep 2024,27-09-2024
+89,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,3022,2900,28 Aug 2024,28-08-2024
+90,Shajapur,Shajapur,Wheat,Local,FAQ,2056,2701,2200,07 Mar 2024,07-03-2024
+91,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2280,2378,2300,02 Apr 2024,02-04-2024
+92,Shajapur,Shajapur,Wheat,Local,FAQ,2346,2880,2424,15 Jun 2024,15-06-2024
+93,Shajapur,Shajapur,Wheat,Local,FAQ,1848,2601,2315,05 Mar 2024,05-03-2024
+94,Shajapur,Shajapur,Wheat,Local,FAQ,1900,2680,2300,18 Mar 2024,18-03-2024
+95,Shajapur,Shajapur,Wheat,Local,FAQ,2390,2869,2500,20 Jun 2024,20-06-2024
+96,Shajapur,Shajapur,Wheat,Wheat,FAQ,2543,3000,3000,08 Aug 2024,08-08-2024
+97,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2370,2432,2400,30 Apr 2024,30-04-2024
+98,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2869,2392,21 May 2024,21-05-2024
+99,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,2981,2650,18 Oct 2024,18-10-2024
+100,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2300,2333,2150,20 Mar 2024,20-03-2024
+101,Shajapur,Shajapur,Wheat,Local,FAQ,2325,2850,2386,01 Jun 2024,01-06-2024
+102,Shajapur,Shajapur,Wheat,Wheat,FAQ,2400,3030,2590,20 Sep 2024,20-09-2024
+103,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2341,2365,2350,04 Apr 2024,04-04-2024
+104,Shajapur,Shajapur,Wheat,Local,FAQ,2400,2840,2586,24 Jun 2024,24-06-2024
+105,Shajapur,Shajapur,Wheat,Local,FAQ,2000,3034,2300,02 Apr 2024,02-04-2024
+106,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,3042,2981,29 Aug 2024,29-08-2024
+107,Shajapur,Shajapur,Wheat,Local,FAQ,2100,3032,2400,25 Apr 2024,25-04-2024
+108,Shajapur,Shajapur,Wheat,Wheat,FAQ,2200,3081,2575,06 Aug 2024,06-08-2024
+109,Shajapur,Shajapur,Wheat,Wheat,FAQ,2599,2942,2870,15 Oct 2024,15-10-2024
+110,Shajapur,Shajapur,Wheat,Lokwan,FAQ,2402,2402,2300,07 May 2024,07-05-2024
+111,Shajapur,Shajapur,Wheat,Wheat,FAQ,2563,3100,2605,12 Aug 2024,12-08-2024
+112,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2901,2400,11 Jun 2024,11-06-2024
+113,Shajapur,Shajapur,Wheat,Local,FAQ,2000,2769,2600,19 Jun 2024,19-06-2024
+114,Shajapur,Shajapur,Wheat,Local,FAQ,2100,2770,2300,21 Mar 2024,21-03-2024
+115,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2366,2400,2370,16 Mar 2024,16-03-2024
+116,Shajapur,Shajapur,Wheat,Local,FAQ,1500,2886,2300,26 Apr 2024,26-04-2024
+117,Shajapur,Shajapur,Wheat,Wheat,FAQ,2500,2995,2850,04 Sep 2024,04-09-2024
+118,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2969,2501,22 May 2024,22-05-2024
+119,Shajapur,Shajapur,Wheat,Local,FAQ,1600,2925,2350,29 Apr 2024,29-04-2024
+120,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2446,2472,2300,24 Apr 2024,24-04-2024
+121,Shajapur,Shajapur,Wheat,Wheat,FAQ,2400,2868,2670,05 Oct 2024,05-10-2024
+122,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2270,2318,2300,19 Mar 2024,19-03-2024
+123,Shajapur,Shajapur,Wheat,Wheat,FAQ,2555,4100,2692,04 Oct 2024,04-10-2024
+124,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2352,2372,2300,22 Mar 2024,22-03-2024
+125,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,2865,2865,26 Sep 2024,26-09-2024
+126,Shajapur,Shajapur,Wheat,Local,FAQ,2378,2750,2467,21 Jun 2024,21-06-2024
+127,Shajapur,Shajapur,Wheat,Wheat,FAQ,2505,2969,2800,22 Aug 2024,22-08-2024
+128,Shajapur,Shajapur,Wheat,Local,FAQ,2304,2930,2800,20 May 2024,20-05-2024
+129,Shajapur,Shajapur,Wheat,Local,FAQ,2005,2612,2301,01 Mar 2024,01-03-2024
+130,Shajapur,Shajapur,Wheat,Mill Quality,FAQ,2286,2780,2300,26 Apr 2024,26-04-2024
+131,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2920,2400,27 May 2024,27-05-2024
+132,Shajapur,Shajapur,Wheat,Local,FAQ,2100,2741,2400,13 Mar 2024,13-03-2024
+133,Shajapur,Shajapur,Wheat,Malwa Shakti,FAQ,2620,2623,2623,13 Sep 2024,13-09-2024
+134,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,2969,2850,16 Oct 2024,16-10-2024
+135,Shajapur,Shajapur,Wheat,Local,FAQ,2240,2890,2300,07 May 2024,07-05-2024
+136,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2858,2350,12 Jun 2024,12-06-2024
+137,Shajapur,Shajapur,Wheat,Wheat,FAQ,2600,2969,2969,31 Aug 2024,31-08-2024
+138,Shajapur,Shajapur,Wheat,Local,FAQ,2000,2750,2200,11 Mar 2024,11-03-2024
+139,Shajapur,Shajapur,Wheat,Wheat,FAQ,2636,2990,2990,30 Aug 2024,30-08-2024
+140,Shajapur,Shajapur,Wheat,Local,FAQ,1950,2750,2150,20 Mar 2024,20-03-2024
+141,Shajapur,Shajapur,Wheat,Wheat,FAQ,2581,2969,2669,17 Aug 2024,17-08-2024
+142,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2300,2300,19 May 2024,19-05-2024
+143,Shajapur,Shajapur,Wheat,Local,FAQ,2300,2926,2601,28 May 2024,28-05-2024
+144,Shajapur,Shajapur,Wheat,Wheat,FAQ,2350,2990,2840,07 Oct 2024,07-10-2024
+145,Shajapur,Shajapur,Wheat,Local,FAQ,2000,3030,2300,03 Apr 2024,03-04-2024
+146,Shajapur,Shajapur,Wheat,Wheat,FAQ,2560,2860,2650,16 Aug 2024,16-08-2024
+147,Shajapur,Shajapur,Wheat,Local,FAQ,2250,2850,2400,30 May 2024,30-05-2024

@@ -57,22 +57,22 @@ class AgriDataCollector:
         return name
 
     def get_commodity_no(self, name):
-        commodity = pd.read_csv('dataset/metadata/commodity_list.csv')
+        commodity = pd.read_csv('/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/commodity_list.csv')
         commodity_no = commodity[commodity['text'] == name]['value'].values[0]
         return commodity_no
     
     def get_state_no(self, name):
-        state = pd.read_csv('dataset/metadata/state_list.csv')
+        state = pd.read_csv('/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/state_list.csv')
         state_no = state[state['text'] == name]['value'].values[0]
         return state_no
     
     def get_district_no(self, name):
-        district = pd.read_csv('dataset/metadata/district_list.csv')
+        district = pd.read_csv('/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/district_list.csv')
         district_no = district[district['text'] == name]['value'].values[0]
         return district_no
     
     def get_market_no(self, name):
-        market = pd.read_csv('dataset/metadata/market_list.csv')
+        market = pd.read_csv('/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/market_list.csv')
         market_no = market[market['text'] == name]['value'].values[0]
         return market_no
 

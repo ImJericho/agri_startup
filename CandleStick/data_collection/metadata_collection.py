@@ -30,7 +30,7 @@ class AgmarknetScraper:
         for commodity in commodity_list:
             print(commodity)
         if do_save:
-            self.save_to_csv(commodity_list, 'dataset/metadata/commodity_list.csv')
+            self.save_to_csv(commodity_list, '/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/commodity_list.csv')
         return commodity_list
 
     def find_all_states(self, do_save=False):
@@ -40,7 +40,7 @@ class AgmarknetScraper:
             print(state)
 
         if do_save:
-            self.save_to_csv(state_list, 'dataset/metadata/state_list.csv')
+            self.save_to_csv(state_list, '/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/state_list.csv')
         return state_list
 
     def find_all_districts(self, state_name, do_save=False):
@@ -55,7 +55,7 @@ class AgmarknetScraper:
             print(district)
 
         if do_save:
-            self.save_to_csv(district_list, 'dataset/metadata/district_list.csv')
+            self.save_to_csv(district_list, '/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/district_list.csv')
         return district_list
 
     def find_all_markets(self, state_name, district_name, do_save=False):
@@ -75,7 +75,7 @@ class AgmarknetScraper:
             print(market)
         
         if do_save:
-            self.save_to_csv(market_list, 'dataset/metadata/market_list.csv')
+            self.save_to_csv(market_list, '/Users/vivek/Drive E/PROJECTS/agri_startup/CandleStick/dataset/metadata/market_list.csv')
         return market_list
 
 if __name__ == "__main__":
