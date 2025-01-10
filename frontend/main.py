@@ -85,20 +85,25 @@ with tab3:
 
     st.write("### Update Data in Atlas")
 
-    # Create a DataFrame for displaying commodities with a serial number
-    commodities_df = pd.DataFrame({
-        "S.No": range(1, len(commodities) + 1),
-        "Commodity": commodities
-    })
 
-    # Display the table with a button in the third column
-    for index, row in commodities_df.iterrows():
-        col1, col2, col3 = st.columns([1, 3, 1])
-        col1.write(row["S.No"])
-        col2.write(row["Commodity"])
-        if col3.button("Update", key=f"update_{index}"):
-            done = backend.process_commodity(row["Commodity"], cron_job, market_list)
-            if done:
-                st.success(f"Update for {row['Commodity']} is complete.")
-            else:
-                st.error(f"Update for {row['Commodity']} failed.")
+    password = st.text_input("Enter Password", type="password")
+    if password != "vivek-agri":
+        st.warning("Incorrect password. Please try again.")
+    else:
+        # Create a DataFrame for displaying commodities with a serial number
+        commodities_df = pd.DataFrame({
+            "S.No": range(1, len(commodities) + 1),
+            "Commodity": commodities
+        })
+
+        # Display the table with a button in the third column
+        for index, row in commodities_df.iterrows():
+            col1, col2, col3 = st.columns([1, 3, 1])
+            col1.write(row["S.No"])
+            col2.write(row["Commodity"])
+            if col3.button("Update", key=f"update_{index}"):
+                done = backend.process_commodity(row["Commodity"], cron_job, market_list)
+                if done:
+                    st.success(f"Update for {row['Commodity']} is complete.")
+                else:
+                    st.error(f"Update for {row['Commodity']} failed.")
