@@ -3,6 +3,7 @@ import plotly.express as px
 import pandas as pd
 
 
+
 def candlestick_chart(df, show_fig=False):
     fig = go.Figure(data=[go.Candlestick(x=df['formatted_date'],
                 open=df['Modal Price'],
@@ -25,8 +26,25 @@ def time_series_graph(df, show_fig=False):
         fig.show()
     return fig
 
+def time_series_graph_with_avg_prices(df, show_fig=False):
+    fig = px.line(df, x="formatted_date", y="Modal Price", title='Time Series', color='Market Name')
+    fig.update_xaxes(
+        dtick="M1",
+        tickformat="%b\n%Y",
+        ticklabelmode="period")
+
+    avg_price = df.groupby('formatted_date')['Modal Price'].mean().reset_index()
+    fig.add_scatter(x=avg_price['formatted_date'], y=avg_price['Modal Price'], mode='lines', name='Average Price')
+    if show_fig:
+        fig.show()
+
+    fig2 = px.line(x=avg_price['formatted_date'], y=avg_price['Modal Price'])
+    return fig2
+
 def process_data(data):
     df = pd.DataFrame(data)
-    #sort df according to formatted_date
     df = df.sort_values(by='formatted_date')
     return df
+
+if __name__ == "__main__":
+    pass

@@ -2,14 +2,18 @@ import logging
 from pymongo import MongoClient
 import pandas as pd
 from datetime import datetime
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+MONGO_URL = os.getenv("MONGO_URL")
+
 class mongo_dao:
     def __init__(self, db_name = "CropsRealPrices"):
-        client = MongoClient('mongodb+srv://vivekpatidar00w:zRdspnY6JXoINhsV@cluster0.9fjpr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+        client = MongoClient(MONGO_URL)
         self.db = client[db_name]
         logging.info(f"Connected to MongoDB database: {db_name}")
     
@@ -79,6 +83,9 @@ class mongo_dao:
             result = collection.update_one(query, update, upsert=True)
         logging.info(f"Upserted document into {commodity} collection")
         return result
+
+    def get_commodity_list(self):
+        return self.db.list_collection_names()
 
 if __name__ == "__main__":
     commodities = pd.read_csv("dataset/metadata/commodity_of_intrest.csv")["Value"].tolist()
