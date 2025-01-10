@@ -44,45 +44,14 @@ class mongo_dao:
         documents = collection.find(query)
         return documents
     
-    def find_commodities(self, commodity):
-        collection = self.db[commodity]
-        query = {
-        }
+    # def find_commodities(self, commodity):
+    #     collection = self.db[commodity]
+    #     query = {
+    #     }
 
-        logging.info(f"Finding documents in {commodity} collection with query: {query}")
-        documents = collection.find(query)
-        return documents
-    
-    def insert_transactions(self, commodity, documents):
-        data = documents.to_dict('records') 
-        collection = self.db[commodity]
-        if len(data) == 0:
-            logging.info(f"No documents to insert for {commodity}")
-            return
-        elif len(data) == 1:
-            result = collection.insert_one(data[0])
-            logging.info(f"Inserted one document into {commodity} collection")
-        else:
-            result = collection.insert_many(data)
-            logging.info(f"Inserted {len(data)} documents into {commodity} collection")
-        return 
-
-    def upsert_transactions(self, commodity, documents):
-        data = documents.to_dict('records')
-        collection = self.db[commodity]
-        result = None
-        for doc in data:
-            query = {
-                "District Name": doc["District Name"],
-                "Market Name": doc["Market Name"],
-                "formatted_date": doc["formatted_date"],
-            }
-            update = {
-                "$set": doc
-            }
-            result = collection.update_one(query, update, upsert=True)
-        logging.info(f"Upserted document into {commodity} collection")
-        return result
+    #     logging.info(f"Finding documents in {commodity} collection with query: {query}")
+    #     documents = collection.find(query)
+    #     return documents
 
     def get_commodity_list(self):
         return self.db.list_collection_names()

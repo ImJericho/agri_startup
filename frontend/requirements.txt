@@ -1,0 +1,5 @@
+pandas
+plotly-express
+datetime
+python-dotenv
+pymongo
