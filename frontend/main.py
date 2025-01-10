@@ -55,7 +55,7 @@ with tab1:
         st.plotly_chart(graph_display.time_series_graph_with_avg_prices(data))
 
 with tab2:
-    market_list = pd.read_csv("data/metadata/market_list.csv")['text'].tolist()
+    market_list = pd.read_csv("frontend/data/metada/market_list.csv")['text'].tolist()
     market_list.sort()
     commodity = st.selectbox("Select Commodity", commodity_list, key="commodity_tab3")
     markets = st.multiselect(
