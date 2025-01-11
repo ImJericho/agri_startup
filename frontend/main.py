@@ -60,7 +60,7 @@ with tab1:
 
 
         if success:
-            st.plotly_chart(graph_display.time_series_graph_with_avg_prices(data))
+            st.plotly_chart(graph_display.time_series_graph_with_avg_prices(data, show_fig=False, sunday=False))
             ''
             ''
 
@@ -84,7 +84,7 @@ with tab1:
 
             from_date, to_date = tz.date_range_for_past_x_years(1)
             year_data = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
-            year_avg_price = graph_display.get_average_price(year_data)
+            year_avg_price = graph_display.get_average_price(year_data, sunday=False)
 
             avg_price_data = {
                 'week': week_avg_price,
@@ -106,7 +106,7 @@ with tab1:
                 with col:
                     avg_price = avg_price_data[period]
                     avg_price_display = f'{avg_price:,.2f}'             
-                    growth = f'{((today_price - avg_price) / avg_price) * 100:.2f}%'
+                    growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
 
                     st.metric(
                         label=f"This {period.capitalize()}'s AVG Price",
@@ -140,9 +140,70 @@ with tab2:
     end_date = datetime(to_year, 12, 31)
     if st.button("Submit", key="submit_tab3"):
         data = mongo_dao.find_commodities(commodity=commodity, start_date=start_date, end_date=end_date)
-        data = graph_display.process_data(data)
-        filtered_df = data[data["Market Name"].isin(markets)]
-        st.plotly_chart(graph_display.time_series_graph(filtered_df))
+        success = False
+        try:
+            data = graph_display.process_data(data)
+            data = data[data["Market Name"].isin(markets)]
+            success = True
+        except:
+            st.error("No data found for the selected crop.")
+        
+        if success:
+            sunday = False
+            st.plotly_chart(graph_display.time_series_graph(data, show_fig=False, sunday=sunday))
+            ''
+            ''
+
+            st.header(f"Compare from history for {commodity}", divider=True)
+            tz = utils.TimeDataHandler()
+            from_date, to_date = tz.date_range_for_today()
+            today_price = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
+            today_price = graph_display.get_average_price_for_given_markets(today_price, markets)
+
+            from_date, to_date = tz.date_range_for_past_x_weeks(1)
+            week_data = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
+            week_avg_price = graph_display.get_average_price_for_given_markets(week_data, sunday=sunday, markets=markets)
+
+            from_date, to_date = tz.date_range_for_past_x_months(1)
+            month_data = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
+            month_avg_price = graph_display.get_average_price_for_given_markets(month_data, sunday=sunday, markets=markets)
+
+            from_date, to_date = tz.date_range_for_past_x_months(3)
+            quarter_data = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
+            quarter_avg_price = graph_display.get_average_price_for_given_markets(quarter_data, sunday=sunday, markets=markets)
+
+            from_date, to_date = tz.date_range_for_past_x_years(1)
+            year_data = mongo_dao.find_commodities_prices(commodity=commodity, start_date=from_date, end_date=to_date)
+            year_avg_price = graph_display.get_average_price_for_given_markets(year_data, sunday=sunday, markets=markets)
+
+            avg_price_data = {
+                'week': week_avg_price,
+                'month': month_avg_price,
+                'quarter': quarter_avg_price,
+                'year': year_avg_price
+            }
+            st.metric(
+                label=f"Today's Price",
+                help=f"Date ({datetime.now().strftime('%Y-%m-%d %A')})",
+                value=f'{today_price}₹',
+                border=True,
+            )
+
+            cols = st.columns(2)
+            for i, period in enumerate(['week', 'month', 'quarter', 'year']):
+                col = cols[i % len(cols)]
+            
+                with col:
+                    avg_price = avg_price_data[period]
+                    avg_price_display = f'{avg_price:,.2f}'             
+                    growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
+
+                    st.metric(
+                        label=f"This {period.capitalize()}'s AVG Price",
+                        value=f'{avg_price_display}₹',
+                        delta=growth,
+                        border=True,
+                    )
 
 
 with tab3:

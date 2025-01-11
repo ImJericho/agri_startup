@@ -16,7 +16,11 @@ def candlestick_chart(df, show_fig=False):
         fig.show()
     return fig
 
-def time_series_graph(df, show_fig=False):
+def time_series_graph(df, show_fig=False, sunday=True):
+    if sunday==False:
+        df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+        df = df[df['new_formatted_date'].dt.weekday != 6]
+    
     fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
     fig.update_xaxes(
         dtick="M1",
@@ -27,15 +31,16 @@ def time_series_graph(df, show_fig=False):
         fig.show()
     return fig
 
-def time_series_graph_with_avg_prices(df, show_fig=False):
+def time_series_graph_with_avg_prices(df, show_fig=False, sunday=True):
     fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
     fig.update_xaxes(
         dtick="M1",
         tickformat="%b\n%Y",
         ticklabelmode="period")
     
-    df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
-    df = df[df['new_formatted_date'].dt.weekday != 6]
+    if sunday==False:
+        df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+        df = df[df['new_formatted_date'].dt.weekday != 6]
 
     avg_price = df.groupby('formatted_date')['Modal Price'].mean().reset_index()
     fig.add_scatter(x=avg_price['formatted_date'], y=avg_price['Modal Price'], mode='lines', name='Average Price')
@@ -51,6 +56,15 @@ def get_average_price(df, sunday=True):
         df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
         df = df[df['new_formatted_date'].dt.weekday != 6]
     return df['Modal Price'].mean()
+
+def get_average_price_for_given_markets(df, markets, sunday=True):
+    df = pd.DataFrame(df)
+    df = df[df["Market Name"].isin(markets)]
+    if sunday==False:
+        df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+        df = df[df['new_formatted_date'].dt.weekday != 6]
+    return df['Modal Price'].mean()
+
 
 def process_data(data):
     df = pd.DataFrame(data)

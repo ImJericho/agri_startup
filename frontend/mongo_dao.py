@@ -55,6 +55,7 @@ class mongo_dao:
         projection = {
             'Modal Price': 1,
             'formatted_date': 1,
+            'Market Name': 1,
             '_id': 0
         }
         logging.info(f"Finding documents in {commodity} collection with query: {query} and projection: {projection}")
