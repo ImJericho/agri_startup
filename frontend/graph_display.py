@@ -22,6 +22,10 @@ def time_series_graph(df, show_fig=False, sunday=True):
         df = df[df['new_formatted_date'].dt.weekday != 6]
     
     fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
+    fig.update_layout(
+        xaxis=dict(fixedrange=True),
+        yaxis=dict(fixedrange=True)
+    )
     fig.update_xaxes(
         dtick="M1",
         tickformat="%b\n%Y",
@@ -48,6 +52,10 @@ def time_series_graph_with_avg_prices(df, show_fig=False, sunday=True):
         fig.show()
 
     fig2 = px.line(x=avg_price['formatted_date'], y=avg_price['Modal Price'])
+    fig2.update_layout(
+        xaxis=dict(fixedrange=True),
+        yaxis=dict(fixedrange=True)
+    )
     return fig2
 
 def get_average_price(df, sunday=True):
