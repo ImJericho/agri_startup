@@ -52,6 +52,8 @@ def time_series_graph_with_avg_prices(df, show_fig=False, sunday=True):
 
 def get_average_price(df, sunday=True):
     df = pd.DataFrame(df)
+    if len(df) == 0:
+        return None
     if sunday==False:
         df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
         df = df[df['new_formatted_date'].dt.weekday != 6]
