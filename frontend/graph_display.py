@@ -61,11 +61,14 @@ def get_average_price(df, sunday=True):
 
 def get_average_price_for_given_markets(df, markets, sunday=True):
     df = pd.DataFrame(df)
-    df = df[df["Market Name"].isin(markets)]
-    if sunday==False:
-        df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
-        df = df[df['new_formatted_date'].dt.weekday != 6]
-    return df['Modal Price'].mean()
+    try:
+        df = df[df["Market Name"].isin(markets)]
+        if sunday==False:
+            df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+            df = df[df['new_formatted_date'].dt.weekday != 6]
+        return df['Modal Price'].mean()
+    except:
+        return None
 
 
 def process_data(data):
