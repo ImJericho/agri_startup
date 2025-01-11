@@ -21,42 +21,28 @@ def time_series_graph(df, show_fig=False, sunday=True):
         df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
         df = df[df['new_formatted_date'].dt.weekday != 6]
     
-    fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
+    fig = px.line(x=df["formatted_date"], y=df["Modal Price"], color='Market Name')
     fig.update_layout(
         xaxis=dict(fixedrange=True),
         yaxis=dict(fixedrange=True)
     )
-    fig.update_xaxes(
-        dtick="M1",
-        tickformat="%b\n%Y",
-        ticklabelmode="period")
 
     if show_fig:
         fig.show()
     return fig
 
 def time_series_graph_with_avg_prices(df, show_fig=False, sunday=True):
-    fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
-    fig.update_xaxes(
-        dtick="M1",
-        tickformat="%b\n%Y",
-        ticklabelmode="period")
-    
     if sunday==False:
         df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
         df = df[df['new_formatted_date'].dt.weekday != 6]
-
     avg_price = df.groupby('formatted_date')['Modal Price'].mean().reset_index()
-    fig.add_scatter(x=avg_price['formatted_date'], y=avg_price['Modal Price'], mode='lines', name='Average Price')
-    if show_fig:
-        fig.show()
 
-    fig2 = px.line(x=avg_price['formatted_date'], y=avg_price['Modal Price'])
-    fig2.update_layout(
+    fig = px.line(avg_price, x='formatted_date', y='Modal Price')
+    fig.update_layout(
         xaxis=dict(fixedrange=True),
         yaxis=dict(fixedrange=True)
     )
-    return fig2
+    return fig
 
 def get_average_price(df, sunday=True):
     df = pd.DataFrame(df)
