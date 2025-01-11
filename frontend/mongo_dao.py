@@ -44,6 +44,23 @@ class mongo_dao:
         documents = collection.find(query)
         return documents
     
+    def find_commodities_prices(self, commodity, start_date, end_date):
+        collection = self.db[commodity]
+        query = {
+            'formatted_date': {
+            '$gte': start_date,
+            '$lte': end_date
+            }
+        }
+        projection = {
+            'Modal Price': 1,
+            'formatted_date': 1,
+            '_id': 0
+        }
+        logging.info(f"Finding documents in {commodity} collection with query: {query} and projection: {projection}")
+        documents = collection.find(query, projection)
+        return documents
+    
     # def find_commodities(self, commodity):
     #     collection = self.db[commodity]
     #     query = {

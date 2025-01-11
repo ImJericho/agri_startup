@@ -33,6 +33,9 @@ def time_series_graph_with_avg_prices(df, show_fig=False):
         dtick="M1",
         tickformat="%b\n%Y",
         ticklabelmode="period")
+    
+    df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+    df = df[df['new_formatted_date'].dt.weekday != 6]
 
     avg_price = df.groupby('formatted_date')['Modal Price'].mean().reset_index()
     fig.add_scatter(x=avg_price['formatted_date'], y=avg_price['Modal Price'], mode='lines', name='Average Price')
@@ -41,6 +44,13 @@ def time_series_graph_with_avg_prices(df, show_fig=False):
 
     fig2 = px.line(x=avg_price['formatted_date'], y=avg_price['Modal Price'])
     return fig2
+
+def get_average_price(df, sunday=True):
+    df = pd.DataFrame(df)
+    if sunday==False:
+        df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
+        df = df[df['new_formatted_date'].dt.weekday != 6]
+    return df['Modal Price'].mean()
 
 def process_data(data):
     df = pd.DataFrame(data)

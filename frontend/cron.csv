@@ -1,0 +1,12 @@
+sno,name,type,first_scrap_date,last_scrap_date,active
+1.0,Wheat,commodity,2020-01-01,2025-01-10,1
+2.0,Rice,commodity,2020-01-01,2025-01-10,1
+3.0,Soyabean,commodity,2020-01-01,2025-01-10,1
+4.0,Mustard,commodity,2020-01-01,2025-01-10,1
+5.0,Potato,commodity,2020-01-01,2025-01-10,1
+6.0,Onion,commodity,2020-01-01,2025-01-10,1
+7.0,Tomato,commodity,2020-01-01,2025-01-10,1
+8.0,Orange,commodity,2020-01-01,2025-01-10,1
+9.0,Garlic,commodity,2020-01-01,2025-01-10,1
+10.0,Corriander seed,commodity,2020-01-01,2025-01-10,1
+11.0,Maize,commodity,2020-01-01,2025-01-10,1
