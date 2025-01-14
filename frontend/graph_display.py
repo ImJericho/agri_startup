@@ -21,7 +21,7 @@ def time_series_graph(df, show_fig=False, sunday=True):
         df['new_formatted_date'] = pd.to_datetime(df['formatted_date'])
         df = df[df['new_formatted_date'].dt.weekday != 6]
     
-    fig = px.line(x=df["formatted_date"], y=df["Modal Price"], color='Market Name')
+    fig = px.line(df, x="formatted_date", y="Modal Price", color='Market Name')
     fig.update_layout(
         xaxis=dict(fixedrange=True),
         yaxis=dict(fixedrange=True)
