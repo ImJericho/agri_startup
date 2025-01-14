@@ -38,13 +38,14 @@ with tab1:
     st.header('Price over time', divider='gray')
     st.write('This graph shows average price of crop in all the markets over time.')
     ''
-    commodity = st.selectbox("Select Crop", commodity_list, key="commodity_tab2")
+    commodity = st.selectbox("Select Crop", commodity_list, key="commodity_tab2", on_change=None)
     from_year, to_year = st.slider(
         'Which year are you interested in?',
         key="date_slider_tab1",
         min_value=min_date,
         max_value=max_date,
-        value=[min_date, max_date],    
+        value=[min_date, max_date], 
+        on_change=None  
     )
     start_date = datetime(from_year, 1, 1)
     end_date = datetime(to_year, 12, 31)
@@ -55,6 +56,8 @@ with tab1:
         try:
             data = graph_display.process_data(data)
             success = True
+            if len(data) == 0:
+                Exception("No data found for the selected crop.")
         except:
             st.error("No data found for the selected crop.")
 
@@ -63,7 +66,6 @@ with tab1:
             st.plotly_chart(graph_display.time_series_graph_with_avg_prices(data, show_fig=False, sunday=False))
             ''
             ''
-
             st.header(f"Compare from history for {commodity}", divider=True)
             tz = utils.TimeDataHandler()
             from_date, to_date = tz.date_range_for_today()
@@ -106,7 +108,10 @@ with tab1:
                 with col:
                     avg_price = avg_price_data[period]
                     avg_price_display = f'{avg_price:,.2f}'             
-                    growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
+                    try:
+                        growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
+                    except:
+                        growth = None
 
                     st.metric(
                         label=f"This {period.capitalize()}'s AVG Price",
@@ -145,6 +150,8 @@ with tab2:
             data = graph_display.process_data(data)
             data = data[data["Market Name"].isin(markets)]
             success = True
+            if len(data) == 0:
+                Exception("No data found for the selected crop.")
         except:
             st.error("No data found for the selected crop.")
         
@@ -195,9 +202,11 @@ with tab2:
             
                 with col:
                     avg_price = avg_price_data[period]
-                    avg_price_display = f'{avg_price:,.2f}'             
-                    growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
-
+                    avg_price_display = f'{avg_price:,.2f}'  
+                    try:           
+                        growth = f'{((week_avg_price - avg_price) / avg_price) * 100:.2f}%'
+                    except:
+                        growth = None
                     st.metric(
                         label=f"This {period.capitalize()}'s AVG Price",
                         value=f'{avg_price_display}₹',
