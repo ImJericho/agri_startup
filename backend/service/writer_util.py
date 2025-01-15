@@ -1,15 +1,8 @@
-import logging
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.keys import Keys
-import time
-import csv
-from datetime import datetime
 import pandas as pd
-from bs4 import BeautifulSoup
 import requests
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from bs4 import BeautifulSoup
+from datetime import datetime
+import logging
 
 class AgriDataCollector:
     def __init__(self):
@@ -20,57 +13,27 @@ class AgriDataCollector:
                              "Tx_Trend=0&Tx_CommodityHead={commodity}&"
                              "Tx_StateHead={state}&Tx_DistrictHead={district}&Tx_MarketHead={market}")
 
-    def _select_dropdown(self, driver, element_id, visible_text):
-        element = driver.find_element(by=By.ID, value=element_id)
-        select = Select(element)
-        select.select_by_visible_text(visible_text)
-        time.sleep(2)
-
-    def old_method_using_selenium(self):
-        driver = webdriver.Chrome()
-        driver.get("https://agmarknet.gov.in/PriceAndArrivals/CommodityDailyStateWise.aspx")
-        driver.implicitly_wait(5)
-
-        self._select_dropdown(driver, "ddlArrivalPrice", "Price")
-        self._select_dropdown(driver, "ddlCommodity", "Wheat")
-        self._select_dropdown(driver, "ddlState", "Madhya Pradesh")
-        self._select_dropdown(driver, "ddlDistrict", "Shajapur")
-        self._select_dropdown(driver, "ddlMarket", "Shajapur")
-
-        date_input = driver.find_element(By.ID, "txtDate")
-        date_input.clear()
-        date_input.send_keys("01-Jan-2023")
-        time.sleep(10)
-        date_input.send_keys(Keys.RETURN)
-        time.sleep(40)
-
-        go_button = driver.find_element(by=By.ID, value="btnGo")
-        go_button.click()
-        time.sleep(50)
-
-        driver.quit()
-
     def parse_names(name):
         name = name.replace(' ', '+')
         return name
 
     def get_commodity_no(self, name):
-        commodity = pd.read_csv('backend/data/metadata/commodity_list.csv')
+        commodity = pd.read_csv('cron_data/commodity_list.csv')
         commodity_no = commodity[commodity['text'] == name]['value'].values[0]
         return commodity_no
     
     def get_state_no(self, name):
-        state = pd.read_csv('backend/data/metadata/state_list.csv')
+        state = pd.read_csv('cron_data/state_list.csv')
         state_no = state[state['text'] == name]['value'].values[0]
         return state_no
     
     def get_district_no(self, name):
-        district = pd.read_csv('backend/data/metadata/district_list.csv')
+        district = pd.read_csv('cron_data/district_list.csv')
         district_no = district[district['text'] == name]['value'].values[0]
         return district_no
     
     def get_market_no(self, name):
-        market = pd.read_csv('backend/data/metadata/market_list.csv')
+        market = pd.read_csv('cron_data/market_list.csv')
         market_no = market[market['text'] == name]['value'].values[0]
         return market_no
 
@@ -93,14 +56,14 @@ class AgriDataCollector:
         table = soup.find('table', {'id': 'cphBody_GridPriceData'})
 
         if not table:
-            # logging.warning(f"No data found on the page::: {url}")
+            logging.warning(f"No data found on the page::: {url}")
             return pd.DataFrame()
 
         headers = [th.text.strip() for th in table.find_all('th')]
         data = [[td.text.strip() for td in tr.find_all('td')] for tr in table.find_all('tr')[1:]]
 
         if data == [['No Data Found']]:
-            # logging.warning(f"No data found on the page::: {url}")
+            logging.warning(f"No data found on the page::: {url}")
             return pd.DataFrame()
 
         df = pd.DataFrame(data, columns=headers)
@@ -112,18 +75,5 @@ class AgriDataCollector:
         df['Modal Price'] = pd.to_numeric(df['Modal Price'], errors='coerce')
         df['Sl No'] = pd.to_numeric(df['Sl No'], errors='coerce')
 
-        # logging.info(f"Data collection for {commodity} and {market} completed successfully")
+        logging.info(f"Data collection for {commodity} and {market} completed successfully")
         return df
-
-if __name__ == "__main__":
-    logging.info("Running the main function")
-    collector = AgriDataCollector()
-
-    new_from_date = datetime(2023, 1, 1)
-    new_to_date = datetime(2024, 10, 20)
-    commodity = "Wheat"
-    state = "Madhya Pradesh"
-    district = "Shajapur"
-    market = "Shajapur"
-
-    collector.collect_rawdata(commodity=commodity)
